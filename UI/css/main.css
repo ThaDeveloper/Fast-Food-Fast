@@ -252,4 +252,5 @@ header{
   }
   img:hover {
     transform: scale(1.03);
+    transition: 0.5s;
 }
