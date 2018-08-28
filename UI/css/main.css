@@ -1,0 +1,245 @@
+html{font-family:sans-serif;
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust:100%
+}
+    
+body{margin:0}
+.navigation {
+    height: 70px;
+    background: rgba(0,0,0,0.7);
+}
+    
+.brand {
+    position: absolute;
+    padding-left: 20px;
+    float: left;
+    line-height: 70px;
+    text-transform: uppercase;
+    font-size: 1.4em;
+}
+.brand a,
+.brand a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+    
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+    
+nav {
+    float: right;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    float: left;
+    position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+    display: block;
+    padding: 0 15px;
+    line-height: 70px;
+    /* background: #262626; */
+    color: #ffffff;
+    text-decoration: none;
+}
+.nav-dropdown, nav ul li a:visited{
+    background: rgba(0,0,0,0.7);
+}
+
+nav ul li a:hover,
+nav ul li a:visited:hover {
+    background: #f87203;
+    color: #ffffff;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+    padding-left: 4px;
+    content: ' ▾';
+}
+nav ul li ul li {
+    min-width: 190px;
+}
+nav ul li ul li a {
+    padding: 15px;
+    line-height: 20px;
+}
+    
+.nav-dropdown {
+    position: absolute;
+    display: none;
+    z-index: 1;
+    box-shadow: 0 3px 12px rgba(248, 37, 37, 0.01);
+}
+    
+/* Mobile navigation */
+.nav-mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #262626;
+    height: 70px;
+    width: 70px;
+}
+/* Overview */
+#overview{
+    padding: 30px 0 20px 0;
+    background: #f87203;
+}
+#overview .container .item {
+    width: calc(100%/4.5);
+    float: left;
+    text-align: center;
+    padding: 10px;
+  }
+
+/* Content */
+#content{
+    background: #faf9f9;
+    padding-top: 50px;
+}
+#content .container{
+    background: #ffffff;
+}
+#content .container .item {
+    width: calc(100%/3.5);
+    float: left;
+    text-align: center;
+    padding: 10px;
+  }
+    
+@media only screen and (max-width: 768px) {
+    .nav-mobile {
+        display: block;
+    }
+    
+    nav{
+        width: 100%;
+        padding: 70px 0 15px;
+    }
+    nav ul{
+        display: none;
+    }
+    nav ul li {
+        float: none;
+    }
+    nav ul li a {
+        padding: 15px;
+        line-height: 20px;
+        background: #262626;
+    }
+    nav ul li ul li a {
+        padding-left: 30px;
+    }
+    .nav-dropdown {
+        position: static;
+    }
+    #showcase h1{
+        margin-top: 40px;
+      }
+    #content .item
+      {
+        float: none !important;
+        text-align: center !important;
+        width: 100% !important;
+      }
+}
+@media screen and (min-width: 769px) and (max-width: 1070px) {
+    .nav-list{
+        display: block !important;
+    }   
+    #content .item img{
+        width: 200px;
+    }
+    #content .item{
+        margin: 3px;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1070px) {
+    #content .item img{
+        width: 220px;
+    }
+}
+
+#nav-toggle {
+      position: absolute;
+      left: 18px;
+      top: 22px;
+      cursor: pointer;
+      padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: #ffffff;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+    top: -10px;
+}
+#nav-toggle span:after {
+    bottom: -10px;
+}
+#nav-toggle.active span {
+    background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+    top: 0;
+}
+#nav-toggle.active span:before {
+    transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+    transform: rotate(-45deg);
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+/* Showcase */
+#showcase {
+    min-height: 400px;
+    background:url('../images/main-bg.jpeg') no-repeat center;
+    background-size: cover;
+    text-align: center;
+    color: #ffffff;
+  }
+  #showcase h1{
+    margin-top: 100px;
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .call_to{
+    height: 38px;
+    background: #f87203;
+    border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    border-radius: 2px;
+  }
+
+  footer{
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #f87203;;
+    text-align: center;
+  }
