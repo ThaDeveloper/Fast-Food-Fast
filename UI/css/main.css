@@ -13,7 +13,7 @@ body{margin:0;
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;/*inherit*/
 }
 .navigation {
     height: 70px;
@@ -225,7 +225,7 @@ header{
     background-size: cover;
 }
 
-#content .container, #overview .container{
+#content .container, #overview .container, #how .container{
     width: 99%;
     margin: 0 auto;
     overflow: hidden;
@@ -281,4 +281,25 @@ header{
     color: #f87203;
     margin: 5px;
     text-transform: uppercase;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: auto; 
+    border: 1px solid grey;
+    margin: 1.5%;
+    border-radius: 2px;
+    background: #e6e4e4
+}
+
+/* Clear floats after the columns */
+.inforow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#how h1{
+    text-align: center;
 }
