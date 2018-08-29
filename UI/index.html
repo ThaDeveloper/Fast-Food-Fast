@@ -13,25 +13,25 @@
         <section class="navigation">
             <div class="nav-container">
             <div class="brand">
-                <a href="#!">Fast-Food-Fast</a>
+                <a href="index.html">Fast-Food-Fast</a>
             </div>
             <nav>
                 <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
                 <ul class="nav-list">
                     <li>
-                        <a href="#!">Home</a>
+                        <a href="index.html">Home</a>
                     </li>
                     <li>
                         <a href="#!">Food</a>
                         <ul class="nav-dropdown">
                             <li>
-                                <a href="#!">Main Meals</a>
+                                <a href="#main-dish">Main Meals</a>
                             </li>
                             <li>
-                                <a href="#!">BreakFast</a>
+                                <a href="#snacks">Snacks</a>
                             </li>
                             <li>
-                                <a href="#!">Desserts</a>
+                                <a href="#desserts">Desserts</a>
                             </li>
                         </ul>
                     </li>
@@ -39,10 +39,10 @@
                         <a href="#!">Beverages</a>
                         <ul class="nav-dropdown">
                             <li>
-                                <a href="#!">Hot</a>
+                                <a href="#drinks">Hot</a>
                             </li>
                             <li>
-                                <a href="#!">Cold</a>
+                                <a href="#drinks">Cold</a>
                             </li>
                         </ul>
                     </li>
@@ -60,7 +60,8 @@
         <section id="showcase">
             <div class="container">
                 <h1>Best Pizza in the Galaxy</h1>
-                <button class="call_to" onclick="location.href='index.html#content';">ORDER NOW</button>
+                <button class="call_to" onclick="location.href='#content';">ORDER NOW</button>
+                <button class="call_to full-menu" id="full-menu">Full Menu</button>
             </div>
         </section>
     </header>
@@ -68,7 +69,7 @@
         <div class="container">
             <div class="item">
                 <img src="./images/maincourse.png">
-                <h3>Main Course</h3>
+                <h3>Main Dish</h3>
                 <p>Beetroot water spinach chestnut ricebean pea.</p>
                     
             </div>
@@ -93,47 +94,72 @@
         </div>
     </section>
     <section id="content">
-        <div class="container">
+        <div class="container" id="main-dish">
+            <div class="item">
+                <a href="#content"></a><img src="./images/rice.jpeg"></a>
+                <h3>Vegetable Rice</h3>
+                <p>Beetroot water spinach chestnut ricebean pea.</p>
+                <b>KES. 500.00</b><br><br>
+                <button class="call_to" onclick="location.href='order.html';">Order Now</button>
+            </div>
+            <div class="item">
+                <a href="#content"><img src="./images/brocoli.jpeg"><a/>
+                <h3>Baked Basil Brocoli</h3>
+                <p>Beetroot water spinach chestnut ricebean pea.</p>
+                <b>KES. 800.00</b><br><br>
+                <button class="call_to" onclick="location.href='order.html';">Order Now</button>
+            </div>
+            <div class="item">
+                <a href="#content"><img src="./images/beefsteak.jpeg"></a>
+                <h3>Beef Steak W/ Sauce</h3>
+                <p>Beetroot water spinach chestnut ricebean pea.</p>
+                <b>KES. 1000.00</b><br><br>
+                <button class="call_to" onclick="location.href='order.html';">Order Now</button>
+            </div>
+        </div>
+        <hr>
+        <div class="container" id="snacks">
                 <div class="item">
-                    <a href="food-item.html"><img src="./images/hamburger.jpeg"></a>
+                    <a href="#content"></a><img src="./images/hamburger.jpeg"></a>
                     <h3>Ham Burger</h3>
                     <p>Beetroot water spinach chestnut ricebean pea.</p>
                     <b>KES. 300.00</b><br><br>
-                    <button class="call_to" onclick="location.href='orders.html';">Order Now</button>
+                    <button class="call_to" onclick="location.href='order.html';">Order Now</button>
                 </div>
                 <div class="item">
-                    <a href="food-item.html"><img src="./images/fries.jpeg"><a/>
+                    <a href="#content"><img src="./images/fries.jpeg"><a/>
                     <h3>French Fries</h3>
                     <p>Beetroot water spinach chestnut ricebean pea.</p>
                     <b>KES. 200.00</b><br><br>
-                    <button class="call_to" onclick="location.href='orders.html';">Order Now</button>
+                    <button class="call_to" onclick="location.href='order.html';">Order Now</button>
                 </div>
                 <div class="item">
-                    <a href="food-item.html"><img src="./images/sausage.jpeg"></a>
+                    <a href="#content"><img src="./images/sausage.jpeg"></a>
                     <h3>Sausages</h3>
                     <p>Beetroot water spinach chestnut ricebean pea.</p>
                     <b>KES. 100.00</b><br><br>
-                    <button class="call_to" onclick="location.href='orders.html';">Order Now</button>
+                    <button class="call_to" onclick="location.href='order.html';">Order Now</button>
                 </div>
         </div>
-        <div class="container">
+        <hr>
+        <div class="container" id="drinks">
                 <div class="item">
-                    <a href="food-item.html"><img src="./images/hamburger.jpeg"></a>
-                    <h3>Ham Burger</h3>
+                    <a href="#content"><img src="./images/juice.jpeg"></a>
+                    <h3>Fruit Juice</h3>
                     <p>Beetroot water spinach chestnut ricebean pea.</p>
-                    <button class="call_to" onclick="location.href='orders.html';">Order Now</button>
+                    <button class="call_to" onclick="location.href='order.html';">Order Now</button>
                 </div>
                 <div class="item">
-                    <a href="food-item.html"><img src="./images/fries.jpeg"></a>
-                    <h3>French Fries</h3>
+                    <a href="#content"><img src="./images/coffee.jpeg"></a>
+                    <h3>Black Coffee</h3>
                     <p>Beetroot water spinach chestnut ricebean pea.</p>
-                    <button class="call_to" onclick="location.href='orders.html';">Order Now</button>
+                    <button class="call_to" onclick="location.href='order.html';">Order Now</button>
                 </div>
                 <div class="item">
-                    <a href="food-item.html"><img src="./images/sausage.jpeg"></a>
-                    <h3>Sausages</h3>
+                    <a href="#content"><img src="./images/milkshake.jpeg" alt="Milk Shake"></a>
+                    <h3>Milk Shake</h3>
                     <p>Beetroot water spinach chestnut ricebean pea.</p>
-                    <button class="call_to" onclick="location.href='orders.html';">Order Now</button>
+                    <button class="call_to" onclick="location.href='order.html';">Order Now</button>
                 </div>
         </div>
     </section>
