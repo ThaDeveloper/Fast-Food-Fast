@@ -1,14 +1,25 @@
+/* global styles */
 html{font-family:sans-serif;
     -ms-text-size-adjust:100%;
-    -webkit-text-size-adjust:100%
+    -webkit-text-size-adjust:100%;
+    height: 100%;
 }
     
-body{margin:0}
+body{margin:0;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 .navigation {
     height: 70px;
     background: rgba(0,0,0,0.7);
-}
-    
+}   
 .brand {
     position: absolute;
     padding-left: 20px;
@@ -109,6 +120,7 @@ nav ul li ul li a {
 #content .container{
     background: #ffffff;
     margin:0 auto;
+    padding-left: 20px;
 }
 #content .container .item {
     width: calc(100%/3.1);
@@ -159,8 +171,6 @@ nav ul li ul li a {
         padding: 10px 10px 10px 10px !important;
       
     }
-   
-      
 }
 @media screen and (min-width: 769px){
     .nav-list{
@@ -216,8 +226,8 @@ header{
     background-size: cover;
 }
 
-#content .container, #overview .container{
-    width: 100%;
+#content .container, #overview .container, #how .container{
+    width: 99%;
     margin: 0 auto;
     overflow: hidden;
   }
@@ -242,15 +252,68 @@ header{
     color: #ffffff;
     border-radius: 2px;
   }
+  button:hover{
+      color:#000000;
+      transition: all 0.5s;
+      cursor: pointer;
+      transform: scale(1.03);
+  }
 
   footer{
-    padding: 20px;
+    /* padding: 20px; */
     margin-top: 20px;
     color: #ffffff;
-    background-color: #f87203;;
+    /* background-color: #f87203; */
+    text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #0f0f0f;
     text-align: center;
   }
   img:hover {
     transform: scale(1.03);
-    transition: 0.5s;
 }
+.full-menu{
+    background: #ffffff;
+    border: 2px solid #f87203;
+    color: #f87203;
+    margin: 5px;
+    text-transform: uppercase;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: auto; 
+    border: 1px solid rgb(241, 241, 241);
+    margin: 1.5%;
+    border-radius: 2px;
+    background: #e6e4e4
+}
+
+/* Clear floats after the columns */
+.inforow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#how h1{
+    text-align: center;
+}
+.column img {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;;
+  }
+  .column p span{
+    color: red;
+    font-size: 1.5em;
+  }
+  
