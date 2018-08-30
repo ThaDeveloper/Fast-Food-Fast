@@ -287,8 +287,8 @@ header{
     float: left;
     width: 30%;
     padding: 10px;
-    height: auto; 
-    border: 1px solid grey;
+    height: 230px; 
+    border: 1px solid rgb(241, 241, 241);
     margin: 1.5%;
     border-radius: 2px;
     background: #e6e4e4
@@ -303,3 +303,16 @@ header{
 #how h1{
     text-align: center;
 }
+.column img {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;;
+  }
+  .column p span{
+    color: red;
+    font-size: 1.5em;
+  }
+  
