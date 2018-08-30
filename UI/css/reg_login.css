@@ -12,7 +12,7 @@ body{
 .wrapper{
     margin: 0 auto;
     width: 40%;
-    padding-top: 5%;
+    padding-top: 2%;
 }
 .container{
     border: 0px;
@@ -66,10 +66,10 @@ button:hover {
     padding: 14px 20px;
     background-color: #ac1f1c;
 }
-.signupbtn{
-    background-color: #0b81e2;
+.sign{
+    background-color: #f87203;
 }
-.cancelbtn, .signupbtn {
+.cancelbtn, .sign {
   float: left;
   width: 50%;
 }
@@ -98,7 +98,7 @@ hr {
 }
 
 @media screen and (max-width: 500px) {
-    .cancelbtn, .signupbtn {
+    .cancelbtn, .sign {
        width: 100%;
     }
 }
