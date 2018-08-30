@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fast-Food-Fast - Add Item</title>
+    <title>Fast-Food-Fast - Edit Item</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/order.css">
     <link rel="stylesheet" href="./css/item.css">
@@ -75,18 +75,17 @@
         </header>
         <div class="wrapper">
                 <div id="header">
-                        <h2>Add to Menu</h2>
+                        <h2>Update Item</h2>
                 </div>
                 <div id="back"><button onclick="location.href='food_catalog.html';">Back</button></div>
 
                 <div class="container">
                         <form action="">
                             <label for="Item Name"><b>Item Name</b></label>
-                            <input type="text" placeholder="Enter Name" name="item_name" required>
+                            <input type="text" placeholder="Enter Name" name="item_name" value="Beef Steak w/ Sauce" required>
                             
                             <label for="Category"><b>Category</b></label>
                             <select id="category" name="category">
-                                <option value="">Select...</option>
                                 <option value="main">Main</option>
                                 <option value="snacks">snacks</option>
                                 <option value="main">desserts</option>
@@ -95,7 +94,7 @@
                             <br>
                             <label for="image"><b>Upload Image</b></label><input type="file"  name="pic" accept="image/*">
                             <div class="submit">
-                                <input type="submit" value="Add Item">
+                                <input type="submit" value="Update">
                             </div>
                         </form>
                     </div>
