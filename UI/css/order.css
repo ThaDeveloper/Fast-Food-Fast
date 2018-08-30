@@ -1,11 +1,9 @@
 .wrapper{
- /* background: #f7f5f5; */
  height:auto;
- /* padding-top: 100px; */
  font-size: 1em;
 } 
 .wrapper #header{
-    background: #428bca;
+    background: #f87203;
     text-align: center;
     height: 10%;
     padding: 10px 0 10px 0;
@@ -23,9 +21,6 @@
         width: 20px;
         text-align: center;
 }
-/* #orders tr td:nth-child(n+3){
-    width: 5px;
-} */
 #orders tr:nth-child(even){background-color: #f2f2f2;}
     
 #orders tr:hover {background-color: #ddd;}
@@ -54,5 +49,13 @@ img{
     padding-right: 10px;
     color: #ffffff;
     border-radius: 2px;
+}
+#orders tr:last-child button{
+    margin: 10px;
+}
+button:hover{
+    transition: all 0.5s;
+    cursor: pointer;
+    transform: scale(1.03);
 }
 
