@@ -260,10 +260,8 @@ header{
   }
 
   footer{
-    /* padding: 20px; */
     margin-top: 20px;
     color: #ffffff;
-    /* background-color: #f87203; */
     text-align: center;
     position: absolute;
     right: 0;
@@ -316,4 +314,22 @@ header{
     color: red;
     font-size: 1.5em;
   }
-  
+  button:hover{
+    color:#000000;
+    transition: all 0.5s;
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+footer{
+  margin-top: 20px;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #0f0f0f;
+  text-align: center;
+}

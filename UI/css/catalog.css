@@ -17,3 +17,15 @@
 #add{
     margin-top: 10px;
 }
+#orders tr td:nth-child(n+2){
+    width: 10%;
+}
+#orders tr td:nth-child(6){
+    width: 5%;
+}
+#orders tr td:nth-child(-n+2){
+    width: 2%;
+}
+#orders tr td:nth-child(3){
+    width: 5%;
+}
