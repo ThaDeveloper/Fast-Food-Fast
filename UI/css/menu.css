@@ -3,3 +3,9 @@
     color: rgb(251, 226, 0);
     background: white;
 }
+.orders tr td:nth-child(1){
+    width: 5% !important;
+}
+.orders tr td:nth-child(n+2){
+    width: 10% !important;
+}
