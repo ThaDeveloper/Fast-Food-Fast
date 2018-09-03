@@ -45,6 +45,13 @@ input[type=submit]:hover{
         width: 100%;
         margin-top: 0;
     }
+    .wrapper #back{
+        padding-left: 10% !important;
+    }
+    .container{
+        width:80%;
+        padding: 5%;
+    }
 }
 .wrapper button{
     padding: 12px 20px;
@@ -52,5 +59,6 @@ input[type=submit]:hover{
     cursor: pointer;
 }
 .wrapper #back{
-    padding: 20px 20px 20px 330px;
+    padding-left: 25%;
+    padding-top: 3%;
 }
