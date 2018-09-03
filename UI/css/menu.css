@@ -4,8 +4,11 @@
     background: white;
 }
 .orders tr td:nth-child(1){
-    width: 5% !important;
+    width: 3% !important;
 }
-.orders tr td:nth-child(n+2){
-    width: 10% !important;
+.orders tr td:nth-child(2){
+    width: 15% !important;
+}
+.orders tr td:nth-child(5), .orders tr td:nth-child(4){
+    width: 15% !important;
 }
