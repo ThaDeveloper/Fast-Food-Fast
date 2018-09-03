@@ -52,7 +52,8 @@
     width: 100%;
     height: 30%;
    }
-   #remove, #accept, #decline, #complete{
+   #remove, #accept, #decline, #complete, 
+   #cancel, #order_again{
        background-color: #ac1f1c;
        height: 20px;
        border: 0;
@@ -65,7 +66,7 @@
        text-align: center;
        padding: 10px;
    }
-    #complete{
+    #complete, #order_again{
        background-color: #f87203;;
     }
    #accept{
@@ -90,9 +91,21 @@
      background-color: #0f0f0f;
      text-align: center;
    }
-   @media only screen and (max-width: 550px) {
+.orders tr td input[type="text"]{
+    width: 20%;
+}
+.orders tr td button{
+    margin: 1%;
+}
+@media only screen and (max-width: 550px) {
        .orders{
         display: flex;
        }
    }
+
+   @media only screen and (max-width: 830px) {
+    .orders tr td button{
+        height: auto !important;
+    }
+}
    
