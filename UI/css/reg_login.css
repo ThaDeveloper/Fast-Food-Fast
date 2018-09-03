@@ -102,3 +102,13 @@ hr {
        width: 100%;
     }
 }
+@media screen and (max-width: 1000px) {
+    .wrapper {
+      width: 60%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .wrapper {
+      width: 80%;
+    }
+}
