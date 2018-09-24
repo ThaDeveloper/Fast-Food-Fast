@@ -1,3 +1,4 @@
+
 html{font-family:sans-serif;
     -ms-text-size-adjust:100%;
     -webkit-text-size-adjust:100%
@@ -9,6 +10,28 @@ body{margin:0}
     background: rgba(0,0,0,0.7);
 }
     
+/* global styles */
+html{font-family:sans-serif;
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust:100%;
+    height: 100%;
+}
+    
+body{margin:0;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.navigation {
+    height: 70px;
+    background: rgba(0,0,0,0.7);
+}   
 .brand {
     position: absolute;
     padding-left: 20px;
@@ -93,6 +116,11 @@ nav ul li ul li a {
     padding: 30px 0 20px 0;
     background: #f87203;
 }
+
+#overview .container{
+    padding-left: 8%;
+}
+
 #overview .container .item {
     width: calc(100%/4.5);
     float: left;
@@ -109,6 +137,7 @@ nav ul li ul li a {
 #content .container{
     background: #ffffff;
     margin:0 auto;
+    padding-left: 10px;
 }
 #content .container .item {
     width: calc(100%/3.1);
@@ -118,6 +147,7 @@ nav ul li ul li a {
   }
   #content .container .item img{
     width: 95%;
+
 }
     
 @media only screen and (max-width: 768px) {
@@ -159,8 +189,18 @@ nav ul li ul li a {
         padding: 10px 10px 10px 10px !important;
       
     }
-   
-      
+    #content .container{
+        padding-right: 38px !important;
+        padding-left: 10px !important;
+    }
+    #testimonials .container .column{
+        width: 100%;
+        
+    }
+    #testimonials .container{
+        padding-right: 20px;
+    }
+
 }
 @media screen and (min-width: 769px){
     .nav-list{
@@ -171,6 +211,13 @@ nav ul li ul li a {
         float: left;
         text-align: center;
       }
+}
+
+    
+@media only screen and (min-width: 769px) and (max-width: 1000px) {
+    #content .container{
+        padding-right: 10px !important;
+    }
 }
 
 #nav-toggle {
@@ -218,6 +265,9 @@ header{
 
 #content .container, #overview .container{
     width: 100%;
+
+#content .container, #overview .container, #testimonials .container{
+    width: 99%;
     margin: 0 auto;
     overflow: hidden;
   }
@@ -242,7 +292,15 @@ header{
     color: #ffffff;
     border-radius: 2px;
   }
+  button:hover{
+      color:#000000;
+      transition: all 0.5s;
+      cursor: pointer;
+      transform: scale(1.03);
+  }
+
   footer{
+    /* padding: 20px; */
     margin-top: 20px;
     color: #ffffff;
     text-align: center;
@@ -258,3 +316,46 @@ header{
     transform: scale(1.03);
     transition: 0.5s;
 }
+
+}
+.full-menu{
+    background: #ffffff;
+    border: 2px solid #f87203;
+    color: #f87203;
+    margin: 5px;
+    text-transform: uppercase;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: auto; 
+    border: 1px solid rgb(241, 241, 241);
+    margin: 1.5%;
+    border-radius: 2px;
+    background: #e6e4e4
+}
+
+/* Clear floats after the columns */
+.inforow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#testimonials h1{
+    text-align: center;
+}
+.column img {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;;
+  }
+  .column p span{
+    color: red;
+    font-size: 1.5em;
+  }
+
