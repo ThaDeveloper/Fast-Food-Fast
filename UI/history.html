@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./css/order.css">
     <link rel="stylesheet" href="./css/history.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.png">
 </head>
 <body>
     <header>
@@ -77,15 +79,16 @@
             <div id="header">
                 <h2>Your Order History, You Got Taste!!</h2>
             </div>
-            <table id="orders">
+            <table class="orders">
                     <tr>
                         <th>ID</th>
                         <th>Image</th>
                         <th>Item</th>
                         <th>Price</th>
-                        <th>Quantity</th>
+                        <th>Servings</th>
                         <th>Subtotal</th>
                         <th>Order Date</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                     <tr>
@@ -96,7 +99,11 @@
                         <td><input type="text" name="quanity" value="2"></td>
                         <td>600</td>
                         <td>30/08/2018</td>
-                        <td><button id="order_again" class="call_to" onclick="location.href='order.html';">Order Again</button></td>
+                        <td>Pending</td>
+                        <td>
+                            <button id="order_again" onclick="location.href='order.html';">Order Again</button>
+                            <button id="cancel">Cancel Order</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -106,7 +113,11 @@
                         <td><input type="text" name="quanity" value="1"></td>
                         <td>200</td>
                         <td>30/07/2018</td>
-                        <td><button id="order_again" class="call_to" onclick="location.href='order.html';">Order Again</button></td>
+                        <td>Pending</td>
+                        <td>
+                                <button id="order_again" onclick="location.href='order.html';">Order Again</button>
+                                <button id="cancel">Cancel Order</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>3</td>
@@ -116,7 +127,10 @@
                         <td><input type="text" name="quanity" value="5"></td>
                         <td>500</td>
                         <td>30/05/2018</td>
-                        <td><button id="order_again" class="call_to" onclick="location.href='order.html';">Order Again</button></td>
+                        <td>Complete</td>
+                        <td>
+                            <button id="order_again" onclick="location.href='order.html';">Order Again</button>
+                        </td>
                     </tr>
             </table>
                 

@@ -1,31 +1,31 @@
-#orders tr:nth-child(3) td:nth-child(-n+7){
+.orders tr:nth-child(3) td:nth-child(-n+7){
     text-decoration: none;
     color: black;
 }
-#orders tr:last-child td:last-child{
+.orders tr:last-child td:last-child{
     text-align: center;
     border-right-style:hidden;
 }
-#orders tr:last-child{
+.orders tr:last-child{
     border-bottom-style:hidden;
     background-color: #ffffff;
 }
-#orders tr:last-child td:first-child{
+.orders tr:last-child td:first-child{
     border-left-style:hidden;
     border-right-style:hidden;
 }
 #add{
     margin-top: 10px;
 }
-#orders tr td:nth-child(n+2){
+.orders tr td:nth-child(n+2){
     width: 10%;
 }
-#orders tr td:nth-child(6){
+.orders tr td:nth-child(6){
     width: 5%;
 }
-#orders tr td:nth-child(-n+2){
+.orders tr td:nth-child(-n+2){
     width: 2%;
 }
-#orders tr td:nth-child(3){
+.orders tr td:nth-child(3){
     width: 5%;
 }

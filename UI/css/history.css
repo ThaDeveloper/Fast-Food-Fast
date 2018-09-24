@@ -1,8 +1,17 @@
-#orders tr:nth-child(3) td:nth-child(-n+7){
+.orders{
+    width: 85%;
+}
+.orders tr:nth-child(3) td:nth-child(-n+7){
     text-decoration: none;
     color: black;
 }
-#orders tr:last-child td:last-child{
+.orders tr:last-child td:last-child{
     text-align: center;
     
+}
+.orders tr td input[type="text"]{
+    width: 20%;
+}
+.orders tr td button{
+    margin: 3%;
 }
