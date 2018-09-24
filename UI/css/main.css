@@ -1,14 +1,5 @@
 
-html{font-family:sans-serif;
-    -ms-text-size-adjust:100%;
-    -webkit-text-size-adjust:100%
-}
-    
-body{margin:0}
-.navigation {
-    height: 70px;
-    background: rgba(0,0,0,0.7);
-}
+/* global styles */
     
 /* global styles */
 html{font-family:sans-serif;
@@ -120,7 +111,6 @@ nav ul li ul li a {
 #overview .container{
     padding-left: 8%;
 }
-
 #overview .container .item {
     width: calc(100%/4.5);
     float: left;
@@ -200,7 +190,6 @@ nav ul li ul li a {
     #testimonials .container{
         padding-right: 20px;
     }
-
 }
 @media screen and (min-width: 769px){
     .nav-list{
@@ -211,6 +200,12 @@ nav ul li ul li a {
         float: left;
         text-align: center;
       }
+}
+    
+@media only screen and (min-width: 769px) and (max-width: 1000px) {
+    #content .container{
+        padding-right: 10px !important;
+    }
 }
 
     
@@ -263,6 +258,7 @@ header{
     background-size: cover;
 }
 
+
 #content .container, #overview .container{
     width: 100%;
 
@@ -314,6 +310,7 @@ header{
   }
   img:hover {
     transform: scale(1.03);
+
     transition: 0.5s;
 }
 

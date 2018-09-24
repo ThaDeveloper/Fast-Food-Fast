@@ -27,6 +27,13 @@
 #orders tr:last-child td:last-child{
     text-align: right;
 }
+#orders tr td:last-child{
+    width: auto;
+}
+#orders tr:nth-child(3) td:nth-child(-n+7){
+    text-decoration: line-through;
+    color: #666464;
+}
 #order tr td input[type="text"]{
     width: 5%;
 }
@@ -41,7 +48,7 @@ img{
  width: 100%;
  height: 30%;
 }
-#remove{
+#remove, #accept, #decline, #complete{
     background-color: #ac1f1c;
     height: 20px;
     border: 0;
@@ -50,8 +57,19 @@ img{
     color: #ffffff;
     border-radius: 2px;
 }
+#orders tr td#bulk-manage{
+    text-align: center;
+    padding: 10px;
+}
+ #complete{
+    background-color: #428bca;
+ }
+#accept{
+    background-color: #5cb85c
+}
 #orders tr:last-child button{
     margin: 10px;
+
 }
 button:hover{
     transition: all 0.5s;
