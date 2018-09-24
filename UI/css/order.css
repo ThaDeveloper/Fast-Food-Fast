@@ -67,8 +67,13 @@ img{
 #accept{
     background-color: #5cb85c
 }
+#orders tr:last-child button{
+    margin: 10px;
+
+}
 button:hover{
     transition: all 0.5s;
     cursor: pointer;
     transform: scale(1.03);
 }
+
