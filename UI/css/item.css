@@ -1,0 +1,64 @@
+input[type=text], select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+input[type=submit] {
+    background: #f87203;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    float: right;
+    
+}
+input[type=submit]:hover{
+    color:#000000;
+    transition: all 0.5s;
+    cursor: pointer;
+    transform: scale(1.03);
+}
+.container {
+    width: 50%;
+    margin: 1% auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+.submit{
+    padding: 10px;
+}
+/* Clear floats after the columns */
+.submit:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 600px) {
+    input, label, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+    .wrapper #back{
+        padding-left: 10% !important;
+    }
+    .container{
+        width:80%;
+        padding: 5%;
+    }
+}
+.wrapper button{
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+.wrapper #back{
+    padding-left: 25%;
+    padding-top: 3%;
+}
