@@ -1,0 +1,8 @@
+#orders tr:nth-child(3) td:nth-child(-n+7){
+    text-decoration: none;
+    color: black;
+}
+#orders tr:last-child td:last-child{
+    text-align: center;
+    
+}

@@ -70,12 +70,17 @@ img{
 #accept{
     background-color: #5cb85c
 }
+
+#orders tr:last-child button{
+    margin: 10px;
+
+}
 button:hover{
-    color:#000000;
     transition: all 0.5s;
     cursor: pointer;
     transform: scale(1.03);
 }
+
 
 footer{
   margin-top: 20px;
@@ -89,3 +94,4 @@ footer{
   background-color: #0f0f0f;
   text-align: center;
 }
+
