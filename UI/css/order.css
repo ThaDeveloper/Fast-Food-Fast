@@ -34,6 +34,9 @@
     text-decoration: line-through;
     color: #666464;
 }
+#orders tr td:last-child{
+    margin-right: 0;
+}
 #order tr td input[type="text"]{
     width: 5%;
 }
@@ -62,11 +65,12 @@ img{
     padding: 10px;
 }
  #complete{
-    background-color: #428bca;
+    background-color: #f87203;;
  }
 #accept{
     background-color: #5cb85c
 }
+
 #orders tr:last-child button{
     margin: 10px;
 
@@ -75,5 +79,19 @@ button:hover{
     transition: all 0.5s;
     cursor: pointer;
     transform: scale(1.03);
+}
+
+
+footer{
+  margin-top: 20px;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #0f0f0f;
+  text-align: center;
 }
 
