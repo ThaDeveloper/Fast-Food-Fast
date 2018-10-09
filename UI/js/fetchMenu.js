@@ -13,7 +13,7 @@ window.onload = function getMenu(){
         let snacksOutput = '';
         let mainOutput = '';
         let drinksOutput = '';
-        data['Full Menu'].forEach(function(menu){
+        data['Full Menu'].forEach((menu) => {
             if (menu.category == 'main'){
                 mainOutput +=`
                 <div class="item">
