@@ -21,7 +21,7 @@ window.onload = function getMenu(){
                 if (menu.category == 'main'){
                     mainOutput +=`
                     <div class="item">
-                    <a href="#content"><img src="./images/beefsteak.jpeg"></a>
+                    <a href="#content"><img src=${menu.image}></a>
                     <h3>${menu.name}</h3>
                     <p> ${menu.name} for that heavy meal </p>
                     <b>KES. ${menu.price}</b><br><br>
@@ -32,7 +32,7 @@ window.onload = function getMenu(){
                 if (menu.category == 'snacks'){
                     snacksOutput +=`
                     <div class="item">
-                    <a href="#content"><img src="./images/hamburger.jpeg"></a>
+                    <a href="#content"><img src=${menu.image}></a>
                     <h3>${menu.name}</h3>
                     <p> ${menu.name} for your grab and go meal </p>
                     <b>KES. ${menu.price}</b><br><br>
@@ -43,7 +43,7 @@ window.onload = function getMenu(){
                 if (menu.category == 'drinks'){
                     drinksOutput +=`
                     <div class="item">
-                    <a href="#content"><img src="./images/coffee..jpeg"></a>
+                    <a href="#content"><img src=${menu.image}></a>
                     <h3>${menu.name}</h3>
                     <p> ${menu.name} for your thirst </p>
                     <b>KES. ${menu.price}</b><br><br>
