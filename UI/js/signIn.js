@@ -23,16 +23,24 @@ function signIn(e){
         statusCode = res.status
         return res.json()
     })
-    .then(res =>{
+    .then(data =>{
         if (statusCode == 200){
-            token = res.token
+            token = data.token
+            //atob decodes base64-encoded string
+            user = JSON.parse(atob(token.split('.')[1]));
             localStorage.setItem('token',token)
-            window.location = 'account_home.html';
+            localStorage.setItem('user',user['username'])
+            if (user['admin']){
+                window.location = 'orders_admin.html';
+            }
+            else{
+                window.location = 'account_home.html';
+            }
         }
         else{
             let element = document.getElementById('errors');
             element.style.color = '#CC0000';
-            element.innerHTML = res.Message;
+            element.innerHTML = data.Message;
         }
     })
     .catch((err) => console.log(err))
