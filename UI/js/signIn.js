@@ -30,11 +30,12 @@ function signIn(e){
             user = JSON.parse(atob(token.split('.')[1]));
             localStorage.setItem('token',token)
             localStorage.setItem('user',user['username'])
+            localStorage.setItem('loggedIn',true) 
             if (user['admin']){
                 window.location = 'orders_admin.html';
             }
             else{
-                window.location = 'account_home.html';
+                window.location = 'index.html';
             }
         }
         else{

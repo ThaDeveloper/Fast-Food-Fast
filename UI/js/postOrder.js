@@ -22,8 +22,13 @@ function postOrder(){
         return res.json()
     })
     .then(data =>{
+        if (statusCode == 201){
         console.log(data)
         alert(data.Message)
+        }
+        else{
+            alert(data.Message)
+        }
     })
     .catch(error => console.log(err))
 }

@@ -14,44 +14,107 @@ window.onload = function getFullMenu(){
     })
     .then((data) => {
         if (statusCode == 200){
-            let snacksOutput = '';
-            let mainOutput = '';
-            let drinksOutput = '';
             data['Full Menu'].forEach((menu) => {
                 if (menu.category == 'main'){
-                    mainOutput +=`
-                    <tr>
-                    <td><img src="./images/beefsteak.jpeg"></td>
-                    <td>${menu.name}</td>
-                    <td>${menu.price}</td>
-                    <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
-                    </tr>
-                    `;
+                    mainItems = document.createElement('tr');
+                    let td1 = document.createElement('td');
+                    let image = document.createElement('img');
+                    image.setAttribute('src', menu.image);
+                    td1.appendChild(image);
+
+                    let td2 = document.createElement('td');
+                    let td2Text = document.createTextNode(menu.name);
+                    td2.appendChild(td2Text);
+
+                    let td3 = document.createElement('td');
+                    let td3Text = document.createTextNode(menu.name);
+                    td3.appendChild(td3Text);
+
+                    let td4 = document.createElement('td');
+                    button = document.createElement('button');
+                    button.setAttribute('class', "call_to")
+                    button.setAttribute('id', menu.name)
+                    let buttonText = document.createTextNode('Order');
+                    button.appendChild(buttonText)
+                    button.addEventListener('click', function clicked(){
+                        localStorage.removeItem('orderItem');
+                        localStorage.setItem('orderItem', this.id)
+                    })
+                    button.addEventListener('click', postOrder)
+                    td4.appendChild(button)
+                    mainItems.appendChild(td1)
+                    mainItems.appendChild(td2)
+                    mainItems.appendChild(td3)
+                    mainItems.appendChild(td4)
+                    document.getElementById('main-dish').appendChild(mainItems);
                 }
                 if (menu.category == 'snacks'){
-                    snacksOutput +=`
-                    <tr>
-                    <td><img src="./images/sausage.jpeg"></td>
-                    <td>${menu.name}</td>
-                    <td>${menu.price}</td>
-                    <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
-                    </tr>
-                    `;
+                    snacksItems = document.createElement('tr');
+                    let td1 = document.createElement('td');
+                    let image = document.createElement('img');
+                    image.setAttribute('src', menu.image);
+                    td1.appendChild(image);
+
+                    let td2 = document.createElement('td');
+                    let td2Text = document.createTextNode(menu.name);
+                    td2.appendChild(td2Text);
+
+                    let td3 = document.createElement('td');
+                    let td3Text = document.createTextNode(menu.price);
+                    td3.appendChild(td3Text);
+
+                    let td4 = document.createElement('td');
+                    button = document.createElement('button');
+                    button.setAttribute('class', "call_to")
+                    button.setAttribute('id', menu.name)
+                    let buttonText = document.createTextNode('Order');
+                    button.appendChild(buttonText)
+                    button.addEventListener('click', function clicked(){
+                        localStorage.removeItem('orderItem');
+                        localStorage.setItem('orderItem', this.id)
+                    })
+                    button.addEventListener('click', postOrder)
+                    td4.appendChild(button)
+                    snacksItems.appendChild(td1)
+                    snacksItems.appendChild(td2)
+                    snacksItems.appendChild(td3)
+                    snacksItems.appendChild(td4)
+                    document.getElementById('snacks').appendChild(snacksItems);
                 }
                 if (menu.category == 'drinks'){
-                    drinksOutput +=`
-                    <tr>
-                    <td><img src="./images/smoothie.jpeg"></td>
-                    <td>${menu.name}</td>
-                    <td>${menu.price}</td>
-                    <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
-                    </tr>
-                    `;
+                drinksItems = document.createElement('tr');
+                let td1 = document.createElement('td');
+                let image = document.createElement('img');
+                image.setAttribute('src', menu.image);
+                td1.appendChild(image);
+
+                let td2 = document.createElement('td');
+                let td2Text = document.createTextNode(menu.name);
+                td2.appendChild(td2Text);
+                
+                let td3 = document.createElement('td');
+                let td3Text = document.createTextNode(menu.name);
+                td3.appendChild(td3Text);
+
+                let td4 = document.createElement('td');
+                button = document.createElement('button');
+                button.setAttribute('class', "call_to")
+                button.setAttribute('id', menu.name)
+                let buttonText = document.createTextNode('Order');
+                button.appendChild(buttonText)
+                button.addEventListener('click', function clicked(){
+                    localStorage.removeItem('orderItem');
+                    localStorage.setItem('orderItem', this.id)
+                })
+                button.addEventListener('click', postOrder)
+                td4.appendChild(button)
+                drinksItems.appendChild(td1)
+                drinksItems.appendChild(t2)
+                drinksItems.appendChild(td3)
+                drinksItems.appendChild(td4)
+                document.getElementById('drinks').appendChild(drinksItems);
                 }
             });   
-            document.getElementById('main-dish').innerHTML = mainOutput;
-            document.getElementById('snacks').innerHTML = snacksOutput;
-            document.getElementById('drinks').innerHTML = drinksOutput;
         }
         else{
             document.getElementById('title').innerHTML = res.Message;
