@@ -1,4 +1,5 @@
 const baseURL = 'https://fastfoodfast-api.herokuapp.com/api/v2/menu'
+window.orderItems = []
 window.onload = function getMenu(){
     fetch(baseURL, {
             method: 'GET',
@@ -77,10 +78,11 @@ window.onload = function getMenu(){
                     let buttonText = document.createTextNode('Order Now')
                     button.appendChild(buttonText)
                     button.addEventListener('click', function clicked(){
-                        localStorage.removeItem('orderItem');
-                        localStorage.setItem('orderItem', this.id)
+                        orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image})
+                        localStorage.setItem('orderItems', JSON.stringify(orderItems))
+                        console.log(localStorage.getItem('orderItems'))
+                        alert('Item added to cart')
                     })
-                    button.addEventListener('click', postOrder);
                     snacksItems.appendChild(link);
                     snacksItems.appendChild(name);
                     snacksItems.appendChild(description);
