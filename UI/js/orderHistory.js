@@ -77,4 +77,5 @@ function cancel(){
             console.log(data.Message)
         }
     })
+    .catch(error => console.log(error))
 }

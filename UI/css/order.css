@@ -25,15 +25,8 @@
    .orders tr:nth-child(even){background-color: #f2f2f2;}
        
    .orders tr:hover {background-color: #ddd;}
-   .orders tr:last-child td:last-child{
-       text-align: right;
-   }
    .orders tr td:last-child{
        width: auto;
-   }
-   .orders tr:nth-child(3) td:nth-child(-n+7){
-       text-decoration: line-through;
-       color: #666464;
    }
    .orders tr td:last-child{
        margin-right: 0;
@@ -49,7 +42,7 @@
     width: 100%;
     height: 30%;
    }
-   #remove, #accept, #decline, #complete, 
+   #remove, .accept, .decline, .complete, 
    .delete, #order_again{
        background-color: #ac1f1c;
        height: 20px;
@@ -63,10 +56,10 @@
        text-align: center;
        padding: 10px;
    }
-    #complete, #order_again{
+    .complete, #order_again{
        background-color: #f87203;;
     }
-   #accept{
+   .accept{
        background-color: #5cb85c
    }
    button:hover{

@@ -32,5 +32,5 @@ function postOrder(){
             alert(data.Message)
         }
     })
-    .catch(error => console.log(err))
+    .catch(error => console.log(error))
 }
