@@ -79,58 +79,14 @@
             <div id="header">
                 <h2>Your Order History, You Got Taste!!</h2>
             </div>
-            <table class="orders">
+            <div id="message"></div>
+            <table class="orders" id="historyTable">
                     <tr>
-                        <th>ID</th>
-                        <th>Image</th>
-                        <th>Item</th>
-                        <th>Price</th>
-                        <th>Servings</th>
-                        <th>Subtotal</th>
+                        <th>Items</th>
+                        <th>Total</th>
                         <th>Order Date</th>
                         <th>Status</th>
                         <th>Action</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td><img src="./images/hamburger.jpeg"></td>
-                        <td>Ham Burger</td>
-                        <td>300</td>
-                        <td><input type="number" name="quanity" value="2"></td>
-                        <td>600</td>
-                        <td>30/08/2018</td>
-                        <td>Pending</td>
-                        <td>
-                            <button id="order_again" onclick="location.href='order.html';">Order Again</button>
-                            <button id="cancel">Cancel Order</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td><img src="./images/fries.jpeg"></td>
-                        <td>Fries</td>
-                        <td>200</td>
-                        <td><input type="number" name="quanity" value="1"></td>
-                        <td>200</td>
-                        <td>30/07/2018</td>
-                        <td>Pending</td>
-                        <td>
-                                <button id="order_again" onclick="location.href='order.html';">Order Again</button>
-                                <button id="cancel">Cancel Order</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><img src="./images/sausage.jpeg"></td>
-                        <td>Sausage</td>
-                        <td>100</td>
-                        <td><input type="number" name="quanity" value="5"></td>
-                        <td>500</td>
-                        <td>30/05/2018</td>
-                        <td>Complete</td>
-                        <td>
-                            <button id="order_again" onclick="location.href='order.html';">Order Again</button>
-                        </td>
                     </tr>
             </table>
                 
@@ -140,5 +96,6 @@
     </footer>
     
 <script src="./js/main.js" type="text/javascript"></script>
+<script src="./js/orderHistory.js" type="text/javascript"></script>
 </body>
 </html>
