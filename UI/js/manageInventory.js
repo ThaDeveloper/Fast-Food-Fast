@@ -1,5 +1,5 @@
-const menuURL = 'https://fastfoodfast-api.herokuapp.com/api/v2/menu'
-const token = localStorage.getItem('token')
+const menuURL = 'https://fastfoodfast-api.herokuapp.com/api/v2/menu';
+const token = localStorage.getItem('token');
 
 window.onload = function getItems(){
     fetch(menuURL, {
@@ -15,7 +15,8 @@ window.onload = function getItems(){
         return res.json()
     })
     .then((data) => {
-        if (statusCode == 200){        
+        if (statusCode == 200){  
+            allItemsTable = document.getElementById('all_items')      
             data['Full Menu'].forEach((item) => {
                 let tr = document.createElement('tr')
                 let imageTd = document.createElement('td')
@@ -35,12 +36,16 @@ window.onload = function getItems(){
                 let editButton = document.createElement('button')
                 editButton.setAttribute('class', 'complete')
                 editButton.setAttribute('id', item.item_id)
+                let editButtonText = document.createTextNode('Edit')
+                editButton.appendChild(editButtonText)
                 editButton.addEventListener('click', function clicked(){
                     localStorage.setItem('toEdit', this.id)
                 })
                 let deleteButton = document.createElement('button')
-                deleteButton.setAttribute('class', 'complete')
+                deleteButton.setAttribute('class', 'decline')
                 deleteButton.setAttribute('id', item.item_id)
+                let deleteButtonText = document.createTextNode('Delete')
+                deleteButton.appendChild(deleteButtonText)
                 deleteButton.addEventListener('click', function clicked(){
                     localStorage.setItem('toEdit', this.id)
                 })
@@ -51,8 +56,20 @@ window.onload = function getItems(){
                 tr.appendChild(priceTd)
                 tr.appendChild(catTd)
                 tr.appendChild(actionTd)
-                document.getElementById('all_items').appendChild(tr)
+                allItemsTable.appendChild(tr)
             })
+            let addTr = document.createElement('tr')
+            let addTd = document.createElement('td')
+            let addButton = document.createElement('button')
+            addButton.setAttribute('class', 'call_to')
+            addButton.setAttribute('id', 'add')
+            addButton.setAttribute('onclick',"location.href='add_item.html';")
+            let addButtonText = document.createTextNode('Add New')
+            addButton.appendChild(addButtonText)
+            addTd.appendChild(addButton)
+            addTd.setAttribute('colspan', '5')
+            addTr.appendChild(addTd)
+            allItemsTable.appendChild(addTr)
         }
         else{
             console.log(data.Message)
