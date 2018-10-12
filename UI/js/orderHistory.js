@@ -1,7 +1,7 @@
 const historyURL = 'https://fastfoodfast-api.herokuapp.com/api/v2/auth/users/orders'
+const token = localStorage.getItem('token');
 
 window.onload = function orderHistory(){
-    let token = localStorage.getItem('token');
     fetch(historyURL, {
         method: 'GET',
         headers: {
@@ -16,7 +16,6 @@ window.onload = function orderHistory(){
     })
     .then(data => {
         if (statusCode == 200){
-            console.log(data['Orders'])
             data['Orders'].forEach(order => {
                 let tr = document.createElement('tr')
                 let itemsTd = document.createElement('td')            
@@ -33,9 +32,14 @@ window.onload = function orderHistory(){
                 statusTd.appendChild(statusText)
                 let actionTd = document.createElement('td')
                 let actionButton = document.createElement('button')
-                actionButton.setAttribute('id', 'cancel')
+                actionButton.setAttribute('id', order.id)
+                actionButton.setAttribute('class', 'delete')
                 let buttonText = document.createTextNode('Cancel')
                 actionButton.appendChild(buttonText)
+                actionButton.addEventListener('click', function toCancel(){
+                    localStorage.setItem('toCancel', this.id)
+                })
+                actionButton.addEventListener('click', cancel)
                 actionTd.appendChild(actionButton)
                 tr.appendChild(itemsTd)
                 tr.appendChild(totalTd)
@@ -50,4 +54,27 @@ window.onload = function orderHistory(){
         }
     })
     .catch(error => console.log(err))
+}
+function cancel(){
+    toCancel = localStorage.getItem('toCancel')
+    fetch(historyURL + '/' + toCancel, {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type': 'application/json',
+            'x-access-token': token
+        }
+    })
+    .then(response =>{
+        statusCode = response.status
+        return response.json()
+    })
+    .then(data =>{
+        if (statusCode == 200){
+            location.reload();
+        }
+        else{
+            console.log(data.Message)
+        }
+    })
 }

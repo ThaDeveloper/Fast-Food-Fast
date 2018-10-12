@@ -50,7 +50,7 @@
     height: 30%;
    }
    #remove, #accept, #decline, #complete, 
-   #cancel, #order_again{
+   .delete, #order_again{
        background-color: #ac1f1c;
        height: 20px;
        border: 0;
