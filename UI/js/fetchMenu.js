@@ -40,10 +40,11 @@ window.onload = function getMenu(){
                     let buttonText = document.createTextNode('Order Now')
                     button.appendChild(buttonText)
                     button.addEventListener('click', function clicked(){
-                        localStorage.removeItem('orderItem');
-                        localStorage.setItem('orderItem', this.id)
+                        orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image})
+                        localStorage.setItem('orderItems', JSON.stringify(orderItems))
+                        console.log(localStorage.getItem('orderItems'))
+                        alert('Item added to cart')
                     })
-                    button.addEventListener('click', postOrder);
                     mainItems.appendChild(link);
                     mainItems.appendChild(name);
                     mainItems.appendChild(description);
@@ -119,10 +120,11 @@ window.onload = function getMenu(){
                     let buttonText = document.createTextNode('Order Now')
                     button.appendChild(buttonText)
                     button.addEventListener('click', function clicked(){
-                        localStorage.removeItem('orderItem');
-                        localStorage.setItem('orderItem', this.id)
+                        orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image})
+                        localStorage.setItem('orderItems', JSON.stringify(orderItems))
+                        console.log(localStorage.getItem('orderItems'))
+                        alert('Item added to cart')
                     })
-                    button.addEventListener('click', postOrder);
                     drinksItems.appendChild(link);
                     drinksItems.appendChild(name);
                     drinksItems.appendChild(description);

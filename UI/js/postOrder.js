@@ -1,10 +1,12 @@
 const orderURL = 'https://fastfoodfast-api.herokuapp.com/api/v2/auth/users/orders';
 
 function postOrder(){
-    let item = localStorage.getItem('orderItem');
+    orderitems = JSON.parse(localStorage.getItem('orderItems'))
     let token = localStorage.getItem('token');
     items = {}
-    items[item] = 1
+    orderitems.forEach(item => {
+        items[item['name']] = 1
+    });    
     order = JSON.stringify({
         'items':items
     })

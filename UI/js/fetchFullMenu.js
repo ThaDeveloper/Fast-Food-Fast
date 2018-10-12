@@ -1,4 +1,5 @@
 const baseURL = 'https://fastfoodfast-api.herokuapp.com/api/v2/menu'
+window.orderItems = []
 window.onload = function getFullMenu(){
     fetch(baseURL, {
             method: 'GET',
@@ -37,10 +38,11 @@ window.onload = function getFullMenu(){
                     let buttonText = document.createTextNode('Order');
                     button.appendChild(buttonText)
                     button.addEventListener('click', function clicked(){
-                        localStorage.removeItem('orderItem');
-                        localStorage.setItem('orderItem', this.id)
+                        orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image})
+                        localStorage.setItem('orderItems', JSON.stringify(orderItems))
+                        console.log(localStorage.getItem('orderItems'))
+                        alert('Item added to cart')
                     })
-                    button.addEventListener('click', postOrder)
                     td4.appendChild(button)
                     mainItems.appendChild(td1)
                     mainItems.appendChild(td2)
@@ -70,10 +72,11 @@ window.onload = function getFullMenu(){
                     let buttonText = document.createTextNode('Order');
                     button.appendChild(buttonText)
                     button.addEventListener('click', function clicked(){
-                        localStorage.removeItem('orderItem');
-                        localStorage.setItem('orderItem', this.id)
+                        orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image})
+                        localStorage.setItem('orderItems', JSON.stringify(orderItems))
+                        console.log(localStorage.getItem('orderItems'))
+                        alert('Item added to cart')
                     })
-                    button.addEventListener('click', postOrder)
                     td4.appendChild(button)
                     snacksItems.appendChild(td1)
                     snacksItems.appendChild(td2)
@@ -103,10 +106,11 @@ window.onload = function getFullMenu(){
                 let buttonText = document.createTextNode('Order');
                 button.appendChild(buttonText)
                 button.addEventListener('click', function clicked(){
-                    localStorage.removeItem('orderItem');
-                    localStorage.setItem('orderItem', this.id)
+                    orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image})
+                    localStorage.setItem('orderItems', JSON.stringify(orderItems))
+                    console.log(localStorage.getItem('orderItems'))
+                    alert('Item added to cart')
                 })
-                button.addEventListener('click', postOrder)
                 td4.appendChild(button)
                 drinksItems.appendChild(td1)
                 drinksItems.appendChild(t2)
