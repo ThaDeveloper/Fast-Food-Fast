@@ -41,6 +41,7 @@ window.onload = function allOrders(){
                 processButton.appendChild(processText)
                 processButton.addEventListener('click', function toUpdate(){
                     localStorage.setItem('toUpdate', this.id)
+                    localStorage.setItem('updateStatus', this.className)
                 })
                 processButton.addEventListener('click', updateStatus)
                 actionTd.appendChild(processButton)
@@ -51,6 +52,7 @@ window.onload = function allOrders(){
                 cancelButton.appendChild(cancelText)
                 cancelButton.addEventListener('click', function toUpdate(){
                     localStorage.setItem('toUpdate', this.id)
+                    localStorage.setItem('updateStatus', this.className)
                 })
                 cancelButton.addEventListener('click', updateStatus)
                 actionTd.appendChild(cancelButton)
@@ -61,6 +63,7 @@ window.onload = function allOrders(){
                 completeButton.appendChild(completeText)
                 completeButton.addEventListener('click', function toUpdate(){
                     localStorage.setItem('toUpdate', this.id)
+                    localStorage.setItem('updateStatus', this.className)
                 })
                 completeButton.addEventListener('click', updateStatus)
                 actionTd.appendChild(completeButton)
@@ -78,4 +81,45 @@ window.onload = function allOrders(){
         }
     })
     .catch(error => console.log(error))
+}
+function updateStatus(){
+    toUpdate = localStorage.getItem('toUpdate')
+    updateStatus = localStorage.getItem('updateStatus')
+    console.log(updateStatus)
+    if (updateStatus == 'accept'){
+        status = 'processing'
+    }
+    if (updateStatus == 'decline'){
+        status = 'cancelled'
+    }
+    if (updateStatus == 'complete'){
+        status = 'completed'
+    }
+    // console.log(status)
+
+    status = JSON.stringify({
+        'status': status
+    })
+    fetch(ordersURL + '/' + toUpdate, {
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type': 'application/json',
+            'x-access-token': token
+        },
+        body: status
+    })
+    .then(response =>{
+        statusCode = response.status
+        return response.json()
+    })
+    .then(data =>{
+        if (statusCode == 200){
+            alert(data.Message)
+            location.reload();
+        }
+        else{
+            console.log(data.Message)
+        }
+    })
 }
