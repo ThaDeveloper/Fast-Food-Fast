@@ -35,7 +35,8 @@ window.onload = function getItems(){
                 let actionTd = document.createElement('td')
                 let editButton = document.createElement('button')
                 editButton.setAttribute('class', 'complete')
-                editButton.setAttribute('id', item.item_id)
+                editButton.setAttribute('id', item.id)
+                editButton.setAttribute('onclick',"location.href='edit_item.html';")
                 let editButtonText = document.createTextNode('Edit')
                 editButton.appendChild(editButtonText)
                 editButton.addEventListener('click', function clicked(){
@@ -43,7 +44,7 @@ window.onload = function getItems(){
                 })
                 let deleteButton = document.createElement('button')
                 deleteButton.setAttribute('class', 'decline')
-                deleteButton.setAttribute('id', item.item_id)
+                deleteButton.setAttribute('id', item.id)
                 let deleteButtonText = document.createTextNode('Delete')
                 deleteButton.appendChild(deleteButtonText)
                 deleteButton.addEventListener('click', function clicked(){
