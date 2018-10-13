@@ -39,7 +39,7 @@ window.onload = function getItems(){
                 let editButtonText = document.createTextNode('Edit')
                 editButton.appendChild(editButtonText)
                 editButton.addEventListener('click', function clicked(){
-                    localStorage.setItem('toEdit', this.id)
+                    localStorage.setItem('menuId', this.id)
                 })
                 let deleteButton = document.createElement('button')
                 deleteButton.setAttribute('class', 'decline')
@@ -47,7 +47,7 @@ window.onload = function getItems(){
                 let deleteButtonText = document.createTextNode('Delete')
                 deleteButton.appendChild(deleteButtonText)
                 deleteButton.addEventListener('click', function clicked(){
-                    localStorage.setItem('toEdit', this.id)
+                    localStorage.setItem('menuId', this.id)
                 })
                 actionTd.appendChild(editButton)
                 actionTd.appendChild(deleteButton)
@@ -76,4 +76,45 @@ window.onload = function getItems(){
         }
     })
     .catch((err)=>console.log(err))
+}
+document.getElementById('addMenu').addEventListener('submit', addMenu)
+
+function addMenu(e){
+    e.preventDefault();
+    let name = document.getElementById('name').value;
+    let price = document.getElementById('price').value;
+    let category = document.getElementById('category').value;
+    let image = document.querySelector('img').src;
+
+    let item = JSON.stringify({
+        'name': name,
+        'price': price,
+        'category': category,
+        'image': image
+    })
+    fetch(menuURL, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type': 'application/json',
+            'x-access-token': token
+        },
+        body: item
+
+    })
+    .then(res =>  {
+        statusCode = res.status
+        return res.json()
+    })
+    .then(data => {
+        if(statusCode == 201){
+            
+            alert("Item added")
+            location.reload()
+        }
+        else{
+            document.getElementById('errors').innerHTML = data.Message
+            console.log(data.Message)
+        }
+    })
 }
