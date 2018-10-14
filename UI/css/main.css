@@ -335,4 +335,22 @@ header{
     color: red;
     font-size: 1.5em;
   }
-  
+#errors, #success {
+margin: 10px 0px;
+border-radius: 5px;
+padding:13px;
+    
+}
+#errors {
+    background-color: #FFD2D2;
+    color: #CC0000;
+}
+#success {
+    background-color: #DFF2BF;
+    color: #00C851;
+}
+#warning {
+    background-color: #FEEFB3;
+    color: #9F6000;
+}
+

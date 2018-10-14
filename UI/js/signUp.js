@@ -10,15 +10,22 @@ function signUp(e){
     let password = document.getElementById('password').value;
     let password_confirm = document.getElementById('pass_confirm').value;
 
-    if (password != password_confirm){
-        document.getElementById('errors').innerHTML = "Passwords don't match";
+    let errorsDiv = document.createElement('div');
+    errorsDiv.setAttribute('id', 'errors')
+    let successDiv = document.createElement('div');
+    successDiv.setAttribute('id', 'success')
+    document.getElementById('messages').innerHTML = "";
+
+    if (last_name == undefined){
+        let nameText = document.createTextNode("First Name and Last Name"
+        + " is required in the format 'Firstname Lastname'");
+        errorsDiv.appendChild(nameText)
+        document.getElementById('messages').appendChild(errorsDiv);
         return
     }
-    if (last_name == undefined){
-        let element = document.getElementById('errors');
-        element.style.color = '#CC0000';
-        element.innerHTML = "First Name and Last Name"
-        + " is required in the format 'Firstname Lastname'";
+    if (password != password_confirm){
+        errorsDiv.innerHTML = "Passwords don't match";
+        document.getElementById('messages').appendChild(errorsDiv)
         return
     }
     else{
@@ -44,15 +51,13 @@ function signUp(e){
     })
     .then(res => {
         if (statusCode == 201 ){
-            let element = document.getElementById('success');
-            element.style.color = '#00C851';
-            element.innerHTML = res.Message;
+            successDiv.innerHTML = res.Message
+            document.getElementById('messages').appendChild(successDiv)
             window.setTimeout(() => window.location = 'login.html', 900);
         }
         else {
-            let element = document.getElementById('errors');
-            element.style.color = '#CC0000';
-            element.innerHTML = res.Message;
+            errorsDiv.innerHTML = res.Message;
+            document.getElementById('messages').appendChild(errorsDiv)
         }
     })
     .catch((err) => console.log(err))
