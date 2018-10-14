@@ -50,6 +50,7 @@ window.onload = function getItems(){
                 deleteButton.addEventListener('click', function clicked(){
                     localStorage.setItem('menuId', this.id)
                 })
+                deleteButton.addEventListener('click', deleteMenu)
                 actionTd.appendChild(editButton)
                 actionTd.appendChild(deleteButton)
                 tr.appendChild(imageTd)
@@ -118,4 +119,36 @@ function addMenu(e){
             console.log(data.Message)
         }
     })
+}
+
+function deleteMenu(e){
+    e.preventDefault();
+    itemId = localStorage.getItem('menuId');
+    fetch(menuURL +'/'+ itemId, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json, text/plain, */*',
+            'x-access-token': token
+        }
+
+    })
+    .then(res =>  {
+        statusCode = res.status
+        return res.json()
+    })
+    .then(data => {
+        if (data.Message == "Invalid request:Signature has expired"){
+            window.location = "login.html"
+        }
+        if(statusCode == 200){
+            alert("Item deleted")
+            location.reload();
+        }
+        else{
+            document.getElementById('errors').innerHTML = data.Message
+            console.log(data.Message)
+        }
+    })
+    .catch((err) => console.log(err))
 }
