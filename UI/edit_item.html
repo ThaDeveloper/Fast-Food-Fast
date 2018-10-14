@@ -70,7 +70,7 @@
                                         <a href="login.html">Profile</a>
                                     </li>
                                     <li>
-                                        <a href="#!">Sign Out</a>
+                                        <a href="login.html">Sign Out</a>
                                     </li>
                                 </ul>
                             </li>
@@ -93,10 +93,10 @@
                             <input type="text" placeholder="Enter Price" id="price" value="" required>
                             <label for="Category"><b>Category</b></label>
                             <select id="category" name="category">
-                                <option value="main">Main</option>
+                                <option value="main">main</option>
                                 <option value="snacks">snacks</option>
                                 <option value="main">desserts</option>
-                                <option value="snacks">drinks</option>
+                                <option value="drinks">drinks</option>
                             </select>
                             <br>
                             <br>
@@ -112,7 +112,6 @@
                 <p>Fast-Food-Fast Ltd, Copyright &copy; 2018</p>
             </footer>
         <script type="text/javascript">  
-            cloudinary.setCloudName("FFF-cloud")
             cloudinary.applyUploadWidget('#image',{ 
             cloudName: 'dijbb7sv1', uploadPreset: 'fast_unsigned', 
             cropping: true, folder: 'FastFoodFast' }, (error, result) => { });    

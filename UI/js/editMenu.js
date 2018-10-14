@@ -5,7 +5,7 @@ window.onload = function getEditItem(){
     fetch(menuURL +'/'+itemId, {
         method: 'GET',
         headers: {
-            'Accept': 'application/json, text/plain, */*',
+            'Accept': 'application/json',
             'Content-type': 'application/json'
         }
     })
@@ -34,18 +34,18 @@ function editMenu(e){
     let price = document.getElementById('price').value;
     let category = document.getElementById('category').value;
     let image = document.querySelector('img').src;
-    console.log(image)
+
     let item = JSON.stringify({
         'name': name,
         'price': price,
         'category': category,
         'image': image
     })
-    fetch(menuURL +'/'+itemId, {
+    fetch(menuURL +'/'+ itemId, {
         method: 'PUT',
         headers: {
+            'Content-Type': 'application/json',
             'Accept': 'application/json, text/plain, */*',
-            'Content-type': 'application/json',
             'x-access-token': token
         },
         body: item
@@ -56,6 +56,9 @@ function editMenu(e){
         return res.json()
     })
     .then(data => {
+        if (data.Message == "Invalid request:Signature has expired"){
+            window.location = "login.html"
+        }
         if(statusCode == 200){
             alert("Item updated")
             window.location = 'food_catalog.html';
@@ -65,4 +68,5 @@ function editMenu(e){
             console.log(data.Message)
         }
     })
+    .catch((err) => console.log(err))
 }
