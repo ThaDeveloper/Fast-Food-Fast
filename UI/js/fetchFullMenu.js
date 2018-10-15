@@ -113,7 +113,7 @@ window.onload = function getFullMenu(){
                 })
                 td4.appendChild(button)
                 drinksItems.appendChild(td1)
-                drinksItems.appendChild(t2)
+                drinksItems.appendChild(td2)
                 drinksItems.appendChild(td3)
                 drinksItems.appendChild(td4)
                 document.getElementById('drinks').appendChild(drinksItems);

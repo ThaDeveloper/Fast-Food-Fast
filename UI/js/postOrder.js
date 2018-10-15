@@ -1,8 +1,7 @@
 const orderURL = 'https://fastfoodfast-api.herokuapp.com/api/v2/auth/users/orders';
-
+const token = localStorage.getItem('token');
 function postOrder(){
     orderitems = JSON.parse(localStorage.getItem('orderItems'))
-    let token = localStorage.getItem('token');
     items = {}
     orderitems.forEach(item => {
         items[item['name']] = 1

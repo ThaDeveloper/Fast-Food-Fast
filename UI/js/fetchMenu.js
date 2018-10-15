@@ -116,7 +116,6 @@ window.onload = function getMenu(){
                     button.setAttribute('class', "call_to");
                     button.setAttribute('id', 'orderOne')
                     button.setAttribute('name', menu.name)
-                    button.addEventListener('click', clicked)
                     let buttonText = document.createTextNode('Order Now')
                     button.appendChild(buttonText)
                     button.addEventListener('click', function clicked(){
