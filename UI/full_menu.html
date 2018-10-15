@@ -59,6 +59,14 @@
                     </li>
                     <script type="text/javascript">
                             navList = document.getElementById('nav-list');
+                            token = localStorage.getItem('token')
+                            if (token){
+                                tokenData = JSON.parse(atob(token.split('.')[1]))
+                                console.log(Date.now() / 1000)
+                                if (tokenData.exp < Date.now() / 1000) { 
+                                    localStorage.setItem('loggedIn',false)
+                                }
+                            }
                             if (localStorage.getItem('loggedIn')){
                                 let li = document.createElement('li');
                                 let a = document.createElement('a');

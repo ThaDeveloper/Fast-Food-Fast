@@ -6,6 +6,8 @@ function signIn(e){
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
 
+    document.getElementById('messages').innerHTML = "";
+
     credentials = JSON.stringify({
         "username": username,
         "password": password
@@ -39,9 +41,11 @@ function signIn(e){
             }
         }
         else{
-            let element = document.getElementById('errors');
-            element.style.color = '#CC0000';
-            element.innerHTML = data.Message;
+            let errorsDiv = document.createElement('div');
+            errorsDiv.setAttribute('id', 'errors')
+            errorsDiv.innerHTML = data.Message;
+            document.getElementById('messages').appendChild(errorsDiv)
+
         }
     })
     .catch((err) => console.log(err))
