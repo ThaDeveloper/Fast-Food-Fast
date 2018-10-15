@@ -28,7 +28,7 @@ window.onload = function getFullMenu(){
                     td2.appendChild(td2Text);
 
                     let td3 = document.createElement('td');
-                    let td3Text = document.createTextNode(menu.name);
+                    let td3Text = document.createTextNode(menu.price);
                     td3.appendChild(td3Text);
 
                     let td4 = document.createElement('td');
@@ -96,7 +96,7 @@ window.onload = function getFullMenu(){
                 td2.appendChild(td2Text);
                 
                 let td3 = document.createElement('td');
-                let td3Text = document.createTextNode(menu.name);
+                let td3Text = document.createTextNode(menu.price);
                 td3.appendChild(td3Text);
 
                 let td4 = document.createElement('td');
