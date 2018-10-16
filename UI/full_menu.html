@@ -18,13 +18,13 @@
         <section class="navigation">
             <div class="nav-container">
             <div class="brand">
-                <a href="index.html">Fast-Food-Fast</a>
+                <a href="account_home.html">Fast-Food-Fast</a>
             </div>
             <nav>
                 <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
                 <ul class="nav-list">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="account_home.html">Home</a>
                     </li>
                     <li>
                         <a href="#!">Food</a>
@@ -69,97 +69,33 @@
         <div id="header">
             <h2>Fast-Foood-Fast Full Menu</h2>
         </div>
-        <div class="category_title"><h3>Snacks</h3></div>
-        <table class="orders">
-                <tr>
-                    <th>ID</th>
-                    <th>Image</th>
-                    <th>Item</th>
-                    <th>Price</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td><img src="./images/hamburger.jpeg"></td>
-                    <td>Ham Burger</td>
-                    <td>300</td>
-                    <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><img src="./images/fries.jpeg"></td>
-                    <td>Fries</td>
-                    <td>200</td>
-                    <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><img src="./images/sausage.jpeg"></td>
-                    <td>Sausage</td>
-                    <td>100</td>
-                    <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
-                </tr>
+        <div class="category_title" id="title"><h3>Snacks</h3></div>
+        <table class="orders" id="snacks">
+            <tr>
+                <th>Image</th>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>      
         </table>
         <div class="category_title"><h3>Main Dish</h3></div>
-        <table class="orders">
+        <table class="orders" id="main-dish">
             <tr>
                 <th>ID</th>
                 <th>Image</th>
                 <th>Item</th>
                 <th>Price</th>
                 <th>Action</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td><img src="./images/beefsteak.jpeg"></td>
-                <td>Beef Steak</td>
-                <td>1000</td>
-                <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td><img src="./images/rice.jpeg"></td>
-                <td>Vegetable Rice</td>
-                <td>500</td>
-                <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td><img src="./images/brocoli.jpeg"></td>
-                <td>Basil Brocoli</td>
-                <td>800</td>
-                <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
             </tr>
         </table>
         <div class="category_title"><h3>Drinks</h3></div>
-        <table class="orders">
+        <table class="orders" id="drinks">
             <tr>
                 <th>ID</th>
                 <th>Image</th>
                 <th>Item</th>
                 <th>Price</th>
                 <th>Action</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td><img src="./images/coffee.jpeg"></td>
-                <td>Black Coffee</td>
-                <td>300</td>
-                <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td><img src="./images/juice.jpeg"></td>
-                <td>Fruti Juice</td>
-                <td>100</td>
-                <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td><img src="./images/milkshake.jpeg"></td>
-                <td>Milk Shake</td>
-                <td>200</td>
-                <td><button id="order" class="call_to" onclick="location.href='order.html';">Order</button></td>
             </tr>
         </table>
         
@@ -170,5 +106,6 @@
     </footer>
 
 <script src="./js/main.js" type="text/javascript"></script>
+<script src="./js/fetchFullMenu.js" text="text/javasript"></script>
 </body>
 </html>
