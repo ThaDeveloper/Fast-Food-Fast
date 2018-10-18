@@ -14,17 +14,19 @@
             <h2>Welcome to Fast-Food-Fast</h2>
             <p>A little taste of heaven</p>
             <hr>
-            <form action="">
+            <form action="" id="signUp">
                 <h1>Sign Up to Order</h1>
-                <input type="text" placeholder="Enter Full Name" name="full_name" required>
+                <div id="errors"></div>
+                <div id="success"></div>
+                <input type="text" placeholder="Enter Full Name"  id="full_name" required>
 
-                <input type="text" placeholder="Enter Username" name="username" required>
+                <input type="text" placeholder="Enter Username" id="username" required>
 
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input type="text" placeholder="Enter Email" id="email" required>
             
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Enter Password" id="password" required>
             
-                <input type="password" placeholder="Repeat Password" name="psw_confirm" required>
+                <input type="password" placeholder="Repeat Password" id="pass_confirm" required>
                     
                 <div class="clearfix">
                     <button type="button" class="cancelbtn"  onclick="location.href='index.html';">Home</button>
@@ -34,5 +36,6 @@
             <p>Already have an account? <a href="login.html">Click here</a></p>
         </div>
       </div>
+      <script src="./js/signUp.js" type="text/javascript"></script>
 </body>
 </html>
