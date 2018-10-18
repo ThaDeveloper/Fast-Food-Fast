@@ -76,64 +76,13 @@
             <div id="header">
                     <h2>Manage Menu</h2>
             </div>
-            <table class="orders">
+            <table class="orders" id="all_items">
                 <tr>
-                    <th><input type="checkbox" id="select_all"></th>
-                    <th>Id</th>
                     <th>Image</th>
-                    <th>Item Name</th>
+                    <th>Name</th>
+                    <th>Price</th>
                     <th>Category</th>
                     <th>Actions</th>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>1</td>
-                    <td><img src="./images/beefsteak.jpeg"></td>
-                    <td>Beef Steak w/ Sauce</td>
-                    <td>main</td>
-                    <td>
-                        <button id="accept" onclick="location.href='edit_item.html';">Edit</button>
-                        <button id="decline">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>2</td>
-                    <td><img src="./images/milkshake.jpeg"></td>
-                    <td>Milk Shake</td>
-                    <td>drinks</td>
-                    <td>
-                        <button id="accept" onclick="location.href='edit_item.html';">Edit</button>
-                        <button id="decline">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>3</td>
-                    <td><img src="./images/sausage.jpeg"></td>
-                    <td>Sausage</td>
-                    <td>snacks</td>
-                    <td>
-                        <button id="accept" onclick="location.href='edit_item.html';">Edit</button>
-                        <button id="decline">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>4</td>
-                    <td><img src="./images/coffee.jpeg"></td>
-                    <td>Coffee</td>
-                    <td>drinks</td>
-                    <td>
-                        <button id="accept" onclick="location.href='edit_item.html';">Edit</button>
-                        <button id="decline">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td id="bulk-manage"><strong><button id="decline">Delete All</button></strong></td>
-                    <td colspan="5">
-                        <button class="call_to" id="add" onclick="location.href='add_item.html';">Add Item</button>
-                    </td>
                 </tr>
                 </table>
                         
@@ -143,5 +92,6 @@
     </footer>
             
 <script src="./js/main.js" type="text/javascript"></script>
+<script src="./js/manageInventory.js" type="text/javascript"></script>
 </body>
 </html>

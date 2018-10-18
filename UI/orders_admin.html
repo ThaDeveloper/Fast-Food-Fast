@@ -16,13 +16,13 @@
         <section class="navigation">
             <div class="nav-container">
                 <div class="brand">
-                    <a href="index.html">Fast-Food-Fast</a>
+                    <a href="#">Fast-Food-Fast</a>
                 </div>
                 <nav>
                     <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
                         <ul class="nav-list">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="#">Home</a>
                             </li>
                             <li>
                                 <a href="#!">Food</a>
@@ -78,67 +78,15 @@
             <div id="header">
                 <h2>Manage Orders</h2>
             </div>
-            <table class="orders">
+            <table class="orders" id="all_orders">
                 <tr>
-                    <th><input type="checkbox" id="select_all"></th>
-                    <th>ID</th>
-                    <th>Name</th>
+                    <th>Owner Id</th>
                     <th>Items</th>
                     <th>Total</th>
-                    <th>Address</th>
-                    <th>Phone</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
                     <th>Actions</th>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>1</td>
-                    <td>Justin Ndwiga</td>
-                    <td><p>Ham Burger, French fries, sausages</p></td>
-                    <td>1300</td>
-                    <td>311 Rosewood Avenue, Gigiri</td>
-                    <td>0110000000</td>
-                    <td>
-                        <button id="accept">Accept</button>
-                        <button id="decline">Decline</button>
-                        <button id="complete">Complete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>2</td>
-                    <td>TJ Miller</td>
-                    <td><p>Ham Burger, French fries, sausages</p></td>
-                    <td>1300</td>
-                    <td>313 Pool Blvd, Beverly Hills</td>
-                    <td>0110000000</td>
-                    <td>
-                        <button id="accept">Accept</button>
-                        <button id="decline">Decline</button>
-                        <button id="complete">Complete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>3</td>
-                    <td>Erykah Baduh</td>
-                    <td><p>Ham Burger, French fries, sausages</p></td>
-                    <td>1300</td>
-                    <td>311 Rosewood Avenue, Gigiri</td>
-                    <td>0110000000</td>
-                    <td>
-                        <button id="accept">Accept</button>
-                        <button id="decline">Decline</button>
-                        <button id="complete">Complete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="7"><strong>Bulk Manage</strong></td>
-                    <td id="bulk-manage">
-                        <button id="accept">Accept All</button>
-                        <button id="decline">Decline All</button>
-                        <button id="complete">Complete All</button>
-                    </td>
-                </tr>
+                </tr>           
                 </table>
                         
             </div>
@@ -147,5 +95,6 @@
     </footer>
             
 <script src="./js/main.js" type="text/javascript"></script>
+<script src="./js/allOrders.js" type="text/javascript"></script>
 </body>
 </html>
