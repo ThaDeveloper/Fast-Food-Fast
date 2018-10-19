@@ -18,8 +18,12 @@ window.onload = function orderHistory(){
         if (statusCode == 200){
             data['Orders'].forEach(order => {
                 let tr = document.createElement('tr')
-                let itemsTd = document.createElement('td')            
-                let itemsText = document.createTextNode(order.items)
+                let itemsTd = document.createElement('td')
+                iText = ""   
+                for (const key of Object.keys(JSON.parse(order.items))) {
+                    iText +=  JSON.parse(order.items)[key] + ":" + key+"(s) \n"
+                }         
+                let itemsText = document.createTextNode(iText)
                 itemsTd.appendChild(itemsText)
                 let totalTd = document.createElement('td')
                 let totalText = document.createTextNode(order.total)
@@ -53,7 +57,7 @@ window.onload = function orderHistory(){
             document.getElementById('message').innerHTML = data.Message;
         }
     })
-    .catch(error => console.log(err))
+    .catch(error => console.log(error))
 }
 function cancel(){
     toCancel = localStorage.getItem('toCancel')
