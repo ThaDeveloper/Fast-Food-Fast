@@ -17,18 +17,19 @@ window.onload = function addOrderItems(){
         let input = document.createElement('input')
         input.setAttribute('type', 'number')
         input.setAttribute('name', 'quantity')
-        input.setAttribute('value', "1")
+        input.setAttribute('value', item.quantity)
         input.setAttribute('id', 'quantity')
         quantityTd.appendChild(input)
         let subtotalTd = document.createElement('td')
-        let subtotalText = document.createTextNode(item.price * 1)
-        total += item.price * 1
+        let subtotalText = document.createTextNode(item.price * item.quantity)
+        total += item.price * item.quantity
         subtotalTd.appendChild(subtotalText)
         let buttonTd = document.createElement('td')
         let button = document.createElement('button')
         button.setAttribute("id", "remove")
         let buttonText = document.createTextNode('Remove')
         button.appendChild(buttonText)
+        button
         buttonTd.appendChild(button)
         tr.appendChild(imageTd)
         tr.appendChild(nameTd)
