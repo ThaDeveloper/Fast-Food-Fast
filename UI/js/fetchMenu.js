@@ -79,9 +79,33 @@ window.onload = function getMenu(){
                     let buttonText = document.createTextNode('Order Now')
                     button.appendChild(buttonText)
                     button.addEventListener('click', function clicked(){
-                        orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image})
-                        localStorage.setItem('orderItems', JSON.stringify(orderItems))
-                        console.log(localStorage.getItem('orderItems'))
+                        itemsStorage = localStorage.getItem('orderItems');
+                        if (itemsStorage != null){        
+                            items = []
+                            itemsStorage = JSON.parse(itemsStorage)
+                            for (let i in itemsStorage){
+                                items.push(itemsStorage[i]['name'])
+                            }
+                            for (let i in itemsStorage){
+                                if (items.includes(menu.name)){
+                                    q = JSON.parse(localStorage.getItem('orderItems'))[i]['quantity'];
+                                    q++;
+                                    JSON.parse(localStorage.getItem('orderItems'))[i].quantity = q
+                                    console.log(JSON.parse(localStorage.getItem('orderItems'))[i].quantity)
+                                }
+                                else{
+                                    quantity = 1
+                                    orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': quantity})
+                                    localStorage.setItem('orderItems', JSON.stringify(orderItems))   
+                                }  
+                            }
+                        }
+                        else{
+                            quantity = 1
+                            orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': quantity})
+                            localStorage.setItem('orderItems', JSON.stringify(orderItems))   
+                        }
+
                         alert('Item added to cart')
                     })
                     snacksItems.appendChild(link);

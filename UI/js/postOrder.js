@@ -4,7 +4,7 @@ function postOrder(){
     orderitems = JSON.parse(localStorage.getItem('orderItems'))
     items = {}
     orderitems.forEach(item => {
-        items[item['name']] = 1
+        items[item['name']] = item['quantity']
     });    
     order = JSON.stringify({
         'items':items
