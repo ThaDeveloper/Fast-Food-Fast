@@ -109,7 +109,6 @@ window.onload = function getMenu(){
                         if (itemsStorage != null){        
                             for (let i in itemsStorage){
                                 if (itemsStorage[i]['name'] == this.id){
-                                    itemsStorage = JSON.parse(localStorage.getItem('orderItems'));
                                     new_ = {}
                                     new_['name']  = itemsStorage[i]['name']
                                     new_['price']  = itemsStorage[i]['price']
@@ -121,7 +120,6 @@ window.onload = function getMenu(){
                                     localStorage.setItem('orderItems', JSON.stringify(itemsStorage))
                                 }
                                 else{
-                                    itemsStorage = JSON.parse(localStorage.getItem('orderItems'));
                                     quantity = 1
                                     itemsStorage.push({'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': quantity})
                                     localStorage.setItem('orderItems', JSON.stringify(itemsStorage))   
@@ -166,8 +164,7 @@ window.onload = function getMenu(){
                     let br = document.createElement('br');
                     let button = document.createElement('button');
                     button.setAttribute('class', "call_to");
-                    button.setAttribute('id', 'orderOne')
-                    button.setAttribute('name', menu.name)
+                    button.setAttribute('id', menu.name)
                     let buttonText = document.createTextNode('Order Now')
                     button.appendChild(buttonText)
                     button.addEventListener('click', function clicked(){

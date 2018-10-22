@@ -29,7 +29,16 @@ window.onload = function addOrderItems(){
         button.setAttribute("id", "remove")
         let buttonText = document.createTextNode('Remove')
         button.appendChild(buttonText)
-        button
+        button.addEventListener('click', function(){
+            for (let i in items){
+                if (items[i].name == item.name){
+                    items.splice(i, 1)
+                    localStorage.setItem('orderItems', JSON.stringify(items))
+                }
+
+            }
+            tr.remove();
+        })
         buttonTd.appendChild(button)
         tr.appendChild(imageTd)
         tr.appendChild(nameTd)
