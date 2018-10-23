@@ -4,7 +4,7 @@
   "description": "Fast-Food-Fast app",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -- 'UI/js/test/*.js' || true"
   },
   "repository": {
     "type": "git",
@@ -15,8 +15,12 @@
   "bugs": {
     "url": "https://github.com/ThaDeveloper/Fast-Food-Fast/issues"
   },
-  "homepage": "https://github.com/ThaDeveloper/Fast-Food-Fast#readme",
+  "homepage": "http://fastfoodfast-ui.herokuapp.com/UI",
   "dependencies": {
     "eslint": "^5.7.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
   }
 }
