@@ -1,28 +1,28 @@
 window.onload = function addOrderItems(){
-    items = JSON.parse(localStorage.getItem('orderItems'))
+    cart = JSON.parse(localStorage.getItem('orderItems'))
     total = 0.00
-    items.forEach((item) => {
+    for ( let item in cart) {
         let tr = document.createElement('tr')
         let imageTd = document.createElement('td')
         let image = document.createElement('img')
-        image.setAttribute("src", item.image)
+        image.setAttribute("src", cart[item].image)
         imageTd.appendChild(image)
         let nameTd = document.createElement('td')
-        let nameText = document.createTextNode(item.name)
+        let nameText = document.createTextNode(cart[item].name)
         nameTd.appendChild(nameText)
         let priceTd = document.createElement('td')
-        let priceText = document.createTextNode(item.price)
+        let priceText = document.createTextNode(cart[item].price)
         priceTd.appendChild(priceText)
         let quantityTd = document.createElement('td')
         let input = document.createElement('input')
         input.setAttribute('type', 'number')
         input.setAttribute('name', 'quantity')
-        input.setAttribute('value', item.quantity)
+        input.setAttribute('value', cart[item].quantity)
         input.setAttribute('id', 'quantity')
         quantityTd.appendChild(input)
         let subtotalTd = document.createElement('td')
-        let subtotalText = document.createTextNode(item.price * item.quantity)
-        total += item.price * item.quantity
+        let subtotalText = document.createTextNode(cart[item].price * cart[item].quantity)
+        total += cart[item].price * cart[item].quantity
         subtotalTd.appendChild(subtotalText)
         let buttonTd = document.createElement('td')
         let button = document.createElement('button')
@@ -30,12 +30,12 @@ window.onload = function addOrderItems(){
         let buttonText = document.createTextNode('Remove')
         button.appendChild(buttonText)
         button.addEventListener('click', function(){
-            for (let i in items){
-                if (items[i].name == item.name){
-                    items.splice(i, 1)
-                    localStorage.setItem('orderItems', JSON.stringify(items))
+            for (let i in cart){
+                if (cart[i].name == cart[item].name){
+                    delete cart[item]
+                    localStorage.setItem('orderItems', JSON.stringify(cart))
+                    location.reload()
                 }
-
             }
             tr.remove();
         })
@@ -47,7 +47,7 @@ window.onload = function addOrderItems(){
         tr.appendChild(subtotalTd)
         tr.appendChild(buttonTd)
         document.getElementById('orderItems').appendChild(tr)
-    })
+    }
     let checkoutTr = document.createElement('tr')
     let totalTd = document.createElement('td')
     totalTd.setAttribute("colspan", "4")

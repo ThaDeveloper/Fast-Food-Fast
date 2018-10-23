@@ -38,32 +38,35 @@ window.onload = function getFullMenu(){
                     let buttonText = document.createTextNode('Order');
                     button.appendChild(buttonText)
                     button.addEventListener('click', function clicked(){
+                        if (data.Message == "Invalid request:Signature has expired" || token == null){
+                            window.location = "login.html"
+                            return
+                        }
                         itemsStorage = JSON.parse(localStorage.getItem('orderItems'));
+                        console.log(itemsStorage)
                         if (itemsStorage != null){        
                             for (let i in itemsStorage){
                                 if (itemsStorage[i]['name'] == this.id){
-                                    itemsStorage = JSON.parse(localStorage.getItem('orderItems'));
                                     new_ = {}
                                     new_['name']  = itemsStorage[i]['name']
                                     new_['price']  = itemsStorage[i]['price']
                                     new_['image'] = itemsStorage[i]['image']
-                                    q = itemsStorage[i].quantity + 1
+                                    console.log(itemsStorage[i].quantity)
+                                    q = itemsStorage[i]['quantity'] + 1
                                     new_['quantity'] = q
-                                    itemsStorage.splice(i, 1)
-                                    itemsStorage.push(new_)
+                                    delete itemsStorage[i]
+                                    itemsStorage[this.id] = new_
                                     localStorage.setItem('orderItems', JSON.stringify(itemsStorage))
                                 }
                                 else{
                                     itemsStorage = JSON.parse(localStorage.getItem('orderItems'));
-                                    quantity = 1
-                                    itemsStorage.push({'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': quantity})
+                                    itemsStorage[this.id] = {'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': 1}
                                     localStorage.setItem('orderItems', JSON.stringify(itemsStorage))   
                                 }  
                             }
                         }
                         else{
-                            quantity = 1
-                            orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': quantity})
+                            orderItems[this.id] = {'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': 1}
                             localStorage.setItem('orderItems', JSON.stringify(orderItems))   
                         }
 
@@ -98,32 +101,35 @@ window.onload = function getFullMenu(){
                     let buttonText = document.createTextNode('Order');
                     button.appendChild(buttonText)
                     button.addEventListener('click', function clicked(){
+                        if (data.Message == "Invalid request:Signature has expired" || token == null){
+                            window.location = "login.html"
+                            return
+                        }
                         itemsStorage = JSON.parse(localStorage.getItem('orderItems'));
+                        console.log(itemsStorage)
                         if (itemsStorage != null){        
                             for (let i in itemsStorage){
                                 if (itemsStorage[i]['name'] == this.id){
-                                    itemsStorage = JSON.parse(localStorage.getItem('orderItems'));
                                     new_ = {}
                                     new_['name']  = itemsStorage[i]['name']
                                     new_['price']  = itemsStorage[i]['price']
                                     new_['image'] = itemsStorage[i]['image']
-                                    q = itemsStorage[i].quantity + 1
+                                    console.log(itemsStorage[i].quantity)
+                                    q = itemsStorage[i]['quantity'] + 1
                                     new_['quantity'] = q
-                                    itemsStorage.splice(i, 1)
-                                    itemsStorage.push(new_)
+                                    delete itemsStorage[i]
+                                    itemsStorage[this.id] = new_
                                     localStorage.setItem('orderItems', JSON.stringify(itemsStorage))
                                 }
                                 else{
                                     itemsStorage = JSON.parse(localStorage.getItem('orderItems'));
-                                    quantity = 1
-                                    itemsStorage.push({'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': quantity})
+                                    itemsStorage[this.id] = {'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': 1}
                                     localStorage.setItem('orderItems', JSON.stringify(itemsStorage))   
                                 }  
                             }
                         }
                         else{
-                            quantity = 1
-                            orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': quantity})
+                            orderItems[this.id] = {'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': 1}
                             localStorage.setItem('orderItems', JSON.stringify(orderItems))   
                         }
 
@@ -158,32 +164,35 @@ window.onload = function getFullMenu(){
                 let buttonText = document.createTextNode('Order');
                 button.appendChild(buttonText)
                 button.addEventListener('click', function clicked(){
+                    if (data.Message == "Invalid request:Signature has expired" || token == null){
+                        window.location = "login.html"
+                        return
+                    }
                     itemsStorage = JSON.parse(localStorage.getItem('orderItems'));
+                    console.log(itemsStorage)
                     if (itemsStorage != null){        
                         for (let i in itemsStorage){
                             if (itemsStorage[i]['name'] == this.id){
-                                itemsStorage = JSON.parse(localStorage.getItem('orderItems'));
                                 new_ = {}
                                 new_['name']  = itemsStorage[i]['name']
                                 new_['price']  = itemsStorage[i]['price']
                                 new_['image'] = itemsStorage[i]['image']
-                                q = itemsStorage[i].quantity + 1
+                                console.log(itemsStorage[i].quantity)
+                                q = itemsStorage[i]['quantity'] + 1
                                 new_['quantity'] = q
-                                itemsStorage.splice(i, 1)
-                                itemsStorage.push(new_)
+                                delete itemsStorage[i]
+                                itemsStorage[this.id] = new_
                                 localStorage.setItem('orderItems', JSON.stringify(itemsStorage))
                             }
                             else{
                                 itemsStorage = JSON.parse(localStorage.getItem('orderItems'));
-                                quantity = 1
-                                itemsStorage.push({'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': quantity})
+                                itemsStorage[this.id] = {'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': 1}
                                 localStorage.setItem('orderItems', JSON.stringify(itemsStorage))   
                             }  
                         }
                     }
                     else{
-                        quantity = 1
-                        orderItems.push({'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': quantity})
+                        orderItems[this.id] = {'name':this.id,'price':menu.price, 'image':menu.image, 'quantity': 1}
                         localStorage.setItem('orderItems', JSON.stringify(orderItems))   
                     }
 

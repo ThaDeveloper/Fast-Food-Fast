@@ -3,9 +3,9 @@ const token = localStorage.getItem('token');
 function postOrder(){
     orderitems = JSON.parse(localStorage.getItem('orderItems'))
     items = {}
-    orderitems.forEach(item => {
-        items[item['name']] = item['quantity']
-    });    
+    for (let i in orderitems) {
+        items[orderitems[i]['name']] = orderitems[i]['quantity']
+    }    
     order = JSON.stringify({
         'items':items
     })
@@ -24,8 +24,10 @@ function postOrder(){
     })
     .then(data =>{
         if (statusCode == 201){
+        localStorage.removeItem('orderItems')
         console.log(data)
         alert(data.Message)
+        location.reload()
         }
         else{
             alert(data.Message)

@@ -5,7 +5,7 @@ if (token){
     }
 }
 function logout(){
+    localStorage.clear()
     localStorage.setItem('loggedIn',false) 
-    localStorage.clear();
     window.location = 'index.html';
 }

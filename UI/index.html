@@ -67,7 +67,7 @@
                                 localStorage.setItem('loggedIn',false)
                             }
                         }
-                        if (localStorage.getItem('loggedIn')){
+                        if (localStorage.getItem('loggedIn') == "true"){
                             let li = document.createElement('li');
                             let a = document.createElement('a');
                             a.setAttribute('href', '#!')
@@ -114,7 +114,7 @@
                             li.appendChild(ul)
                             navList.appendChild(li)
                         }
-                        else{
+                        if (localStorage.getItem('loggedIn') == "false"){
                             let li = document.createElement('li');
                             let a = document.createElement('a');
                             a.setAttribute('href', 'login.html')
