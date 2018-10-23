@@ -78,7 +78,7 @@ function cancel(){
             location.reload();
         }
         else{
-            console.log(data.Message)
+            alert(data.Message)
         }
     })
     .catch(error => console.log(error))

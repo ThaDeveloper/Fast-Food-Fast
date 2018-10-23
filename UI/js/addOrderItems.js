@@ -18,7 +18,7 @@ window.onload = function addOrderItems(){
         input.setAttribute('type', 'number')
         input.setAttribute('name', 'quantity')
         input.setAttribute('value', cart[item].quantity)
-        input.setAttribute('id', 'quantity')
+        input.setAttribute('id', cart[item].name)
         quantityTd.appendChild(input)
         let subtotalTd = document.createElement('td')
         let subtotalText = document.createTextNode(cart[item].price * cart[item].quantity)
