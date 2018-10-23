@@ -1,5 +1,5 @@
 const baseURL = 'https://fastfoodfast-api.herokuapp.com/api/v2/menu'
-window.orderItems = []
+window.orderItems = {}
 window.onload = function getFullMenu(){
     fetch(baseURL, {
             method: 'GET',

@@ -88,6 +88,12 @@ function addMenu(e){
     let category = document.getElementById('category').value;
     let image = document.querySelector('img').src;
 
+    let errorsDiv = document.createElement('div');
+    errorsDiv.setAttribute('id', 'errors')
+    let successDiv = document.createElement('div');
+    successDiv.setAttribute('id', 'success')
+    document.getElementById('messages').innerHTML = "";
+
     let item = JSON.stringify({
         'name': name,
         'price': price,
@@ -110,13 +116,13 @@ function addMenu(e){
     })
     .then(data => {
         if(statusCode == 201){
-            
-            alert("Item added")
+            successDiv.innerHTML = data.Message
+            document.getElementById('messages').appendChild(successDiv)
             location.reload()
         }
         else{
-            document.getElementById('errors').innerHTML = data.Message
-            console.log(data.Message)
+            errorsDiv.innerHTML = data.Message;
+            document.getElementById('messages').appendChild(errorsDiv)
         }
     })
 }

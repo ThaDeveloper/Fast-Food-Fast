@@ -30,13 +30,13 @@
                         <a href="#!">Food</a>
                         <ul class="nav-dropdown">
                             <li>
-                                <a href="#!">Main Meals</a>
+                                <a href="#main-dish">Main Meals</a>
                             </li>
                             <li>
-                                <a href="#!">BreakFast</a>
+                                <a href="#snacks">BreakFast</a>
                             </li>
                             <li>
-                                <a href="#!">Desserts</a>
+                                <a href="#snacks">Desserts</a>
                             </li>
                         </ul>
                     </li>
@@ -44,10 +44,10 @@
                         <a href="#!">Beverages</a>
                         <ul class="nav-dropdown">
                             <li>
-                                <a href="#!">Hot</a>
+                                <a href="#drinks">Hot</a>
                             </li>
                             <li>
-                                <a href="#!">Cold</a>
+                                <a href="#drinks">Cold</a>
                             </li>
                         </ul>
                     </li>
@@ -66,44 +66,62 @@
                                 if (tokenData.exp < Date.now() / 1000) { 
                                     localStorage.setItem('loggedIn',false)
                                 }
-                            }
-                            if (localStorage.getItem('loggedIn')){
-                                let li = document.createElement('li');
-                                let a = document.createElement('a');
-                                a.setAttribute('href', '#!')
-                                aText = document.createTextNode('Account')
-                                a.appendChild(aText)
-
-                                let ul = document.createElement('ul');
-                                ul.setAttribute('class', 'nav-dropdown')
-
-                                let ulLi = document.createElement('li')
-                                let ulLiA = document.createElement('a')
-                                ulLiA.setAttribute('href', 'order.html')
-                                let ulLiAText = document.createTextNode('Cart')
-                                ulLiA.appendChild(ulLiAText)
-                                ulLi.appendChild(ulLiA)
-
-                                ulLi2 = document.createElement('li')
-                                ulLiA2 = document.createElement('a')
-                                ulLiA2.setAttribute('href', "#")
-                                let ulLiA2Text = document.createTextNode("Profile")
-                                ulLiA2.appendChild(ulLiA2Text)
-                                ulLi2.appendChild(ulLiA2)
-
-                                ulLi3 = document.createElement('li')
-                                ulLiA3 = document.createElement('a')
-                                ulLiA3.setAttribute('href', '')
-                                ulLiA3.setAttribute('onclick', 'logout();')
-                                let ulLiA3Text = document.createTextNode("Sign Out")
-                                ulLiA3.appendChild(ulLiA3Text)
-                                ulLi3.appendChild(ulLiA3)
-                                ul.appendChild(ulLi)
-                                ul.appendChild(ulLi2)
-                                ul.appendChild(ulLi3)
-                                li.appendChild(a)
-                                li.appendChild(ul)
-                                navList.appendChild(li)
+                                if (localStorage.getItem('loggedIn') == "true"){
+                                    let li = document.createElement('li');
+                                    let a = document.createElement('a');
+                                    a.setAttribute('href', '#!')
+                                    aText = document.createTextNode('Account')
+                                    a.appendChild(aText)
+    
+                                    let ul = document.createElement('ul');
+                                    ul.setAttribute('class', 'nav-dropdown')
+    
+                                    let ulLi = document.createElement('li')
+                                    let ulLiA = document.createElement('a')
+                                    ulLiA.setAttribute('href', 'order.html')
+                                    let ulLiAText = document.createTextNode('Cart')
+                                    ulLiA.appendChild(ulLiAText)
+                                    ulLi.appendChild(ulLiA)
+    
+                                    let ulLi2 = document.createElement('li')
+                                    let ulLiA2 = document.createElement('a')
+                                    ulLiA2.setAttribute('href', 'history.html')
+                                    let ulLiA2Text = document.createTextNode('History')
+                                    ulLiA2.appendChild(ulLiA2Text)
+                                    ulLi2.appendChild(ulLiA2)
+    
+                                    ulLi3 = document.createElement('li')
+                                    ulLiA3 = document.createElement('a')
+                                    ulLiA3.setAttribute('href', "#")
+                                    let ulLiA3Text = document.createTextNode("Profile")
+                                    ulLiA3.appendChild(ulLiA3Text)
+                                    ulLi3.appendChild(ulLiA3)
+    
+                                    ulLi4 = document.createElement('li')
+                                    ulLiA4 = document.createElement('a')
+                                    ulLiA4.setAttribute('href', '')
+                                    ulLiA4.setAttribute('id', 'signOut')
+                                    ulLiA4.setAttribute('onclick', 'logout();')
+                                    let ulLiA4Text = document.createTextNode("Sign Out")
+                                    ulLiA4.appendChild(ulLiA4Text)
+                                    ulLi4.appendChild(ulLiA4)
+                                    ul.appendChild(ulLi)
+                                    ul.appendChild(ulLi2)
+                                    ul.appendChild(ulLi3)
+                                    ul.appendChild(ulLi4)
+                                    li.appendChild(a)
+                                    li.appendChild(ul)
+                                    navList.appendChild(li)
+                                }
+                                if (localStorage.getItem('loggedIn') == "false"){
+                                    let li = document.createElement('li');
+                                    let a = document.createElement('a');
+                                    a.setAttribute('href', 'login.html')
+                                    let aText = document.createTextNode('Login')
+                                    a.appendChild(aText)
+                                    li.appendChild(a)
+                                    navList.appendChild(li)
+                                }
                             }
                             else{
                                 let li = document.createElement('li');

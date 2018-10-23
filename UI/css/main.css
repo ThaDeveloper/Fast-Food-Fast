@@ -335,10 +335,15 @@ header{
     color: red;
     font-size: 1.5em;
   }
+#messages{
+    width: 50%;
+    margin: 0 auto;
+  }
 #errors, #success {
 margin: 10px 0px;
 border-radius: 5px;
 padding:13px;
+text-align: center;
     
 }
 #errors {

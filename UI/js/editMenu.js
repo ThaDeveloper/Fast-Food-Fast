@@ -35,6 +35,12 @@ function editMenu(e){
     let category = document.getElementById('category').value;
     let image = document.querySelector('img').src;
 
+    let errorsDiv = document.createElement('div');
+    errorsDiv.setAttribute('id', 'errors')
+    let successDiv = document.createElement('div');
+    successDiv.setAttribute('id', 'success')
+    document.getElementById('messages').innerHTML = "";
+
     let item = JSON.stringify({
         'name': name,
         'price': price,
@@ -60,12 +66,13 @@ function editMenu(e){
             window.location = "login.html"
         }
         if(statusCode == 200){
-            alert("Item updated")
+            successDiv.innerHTML = data.Message
+            document.getElementById('messages').appendChild(successDiv)
             window.location = 'food_catalog.html';
         }
         else{
-            document.getElementById('errors').innerHTML = data.Message
-            console.log(data.Message)
+            errorsDiv.innerHTML = data.Message;
+            document.getElementById('messages').appendChild(errorsDiv)
         }
     })
     .catch((err) => console.log(err))
