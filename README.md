@@ -19,8 +19,10 @@ Make sure you have the followings installed.
  - `$ git clone https://github.com/ThaDeveloper/Fast-Food-Fast`
  - `$ cd Fast-Food-Fast`
  - Under /UI directory open index.html' in your favorite browser.
+ 
 
-* To Note: *
+*To Note:*
+
 You will be presented with a list of the available meals to order.
 
 You need to login to order a meal.
