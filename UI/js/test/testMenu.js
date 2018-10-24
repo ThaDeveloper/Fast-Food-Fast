@@ -3,6 +3,7 @@ let request = require('request');
 let expect = require('chai').expect;
 let assert = require('chai').assert
 let baseURL = 'https://fastfoodfast-api.herokuapp.com/api/v2/menu';
+var env = require('node-env-file');
 
 describe('Fetch Menu', function(){
     it('Returns full menu', function(done){
@@ -35,3 +36,45 @@ describe('Fetch Menu', function(){
         });
     });
 });
+describe('Post Menu', function(){
+    let item;
+    let admin;
+    beforeEach(function(done){
+        item = {
+            "name": "testmenutwo",
+            "price": "100.00",
+            "category": "main",
+            "image": "testimage.jpg"
+        }
+        //login before posting menu
+        env(__dirname + '/.env');
+        request.post({
+            url: 'https://fastfoodfast-api.herokuapp.com/api/v2/auth/login',
+            body: {"username": process.env.ADMIN_USER, "password": process.env.ADMIN_PASS},
+            json: true
+          },
+        function(error, response, body){
+            admin = body['token']
+            done();
+        });
+    })  
+    it('Cannot post menu without admin login', function(done){
+        request.post({ url: baseURL},
+        function(error, response, body){
+            expect(response.statusCode).to.equal(401);
+            done();
+        });
+    });
+    it('Can post menu', function(done){
+        request.post({
+            url: baseURL,
+            headers: {'x-access-token': admin},
+            body: item,
+            json: true
+          },
+        function(error, response, body){
+            expect(response.statusCode).to.equal(201);
+            done();
+        });
+    });
+})
