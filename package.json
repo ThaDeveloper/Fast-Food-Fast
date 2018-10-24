@@ -4,7 +4,7 @@
   "description": "Fast-Food-Fast app",
   "main": "index.html",
   "scripts": {
-    "test": "mocha -- 'UI/js/test/*.js' || true"
+    "test": "mocha --timeout 50000 -- 'UI/js/test/*.js' || true"
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,16 @@
   },
   "homepage": "http://fastfoodfast-ui.herokuapp.com/UI",
   "dependencies": {
-    "eslint": "^5.7.0"
+    "eslint": "^5.7.0",
+    "npm": "^6.4.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "es6": "0.0.7",
+    "es6-promise": "^4.2.5",
+    "isomorphic-fetch": "^2.2.1",
+    "mocha": "^5.2.0",
+    "request": "^2.88.0",
+    "should": "^13.2.3"
   }
 }
