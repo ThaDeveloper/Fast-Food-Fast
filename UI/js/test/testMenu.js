@@ -41,7 +41,7 @@ describe('Post Menu', function(){
     let admin;
     beforeEach(function(done){
         item = {
-            "name": "testmenutwo",
+            "name": "testmenu3",
             "price": "100.00",
             "category": "main",
             "image": "testimage.jpg"
