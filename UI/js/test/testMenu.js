@@ -37,8 +37,7 @@ describe('Fetch Menu', function(){
     });
 });
 describe('Menu Management', function(){
-    let newItem, editItem;
-    let admin;
+    let newItem, editItem, admin;
     beforeEach(function(done){
         newItem = {
             "name": "newmenu",
@@ -97,7 +96,7 @@ describe('Menu Management', function(){
     });
     it('Deleting missing menu returns 404', function(done){
         request.delete({
-            url: baseURL+'/63',
+            url: baseURL+'/64',
             headers: {'x-access-token': admin}
           },
         function(error, response, body){
