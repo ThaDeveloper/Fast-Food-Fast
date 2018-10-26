@@ -36,12 +36,18 @@ describe('Fetch Menu', function(){
         });
     });
 });
-describe('Post Menu', function(){
-    let item;
+describe('Menu Management', function(){
+    let newItem, editItem;
     let admin;
     beforeEach(function(done){
-        item = {
-            "name": "testmenu3",
+        newItem = {
+            "name": "newmenu",
+            "price": "100.00",
+            "category": "main",
+            "image": "testimage.jpg"
+        }
+        editItem = {
+            "name": "editmenu",
             "price": "100.00",
             "category": "main",
             "image": "testimage.jpg"
@@ -65,15 +71,37 @@ describe('Post Menu', function(){
             done();
         });
     });
-    it('Can post menu', function(done){
+    it('Admin can post menu', function(done){
         request.post({
             url: baseURL,
             headers: {'x-access-token': admin},
-            body: item,
+            body: newItem,
             json: true
           },
         function(error, response, body){
             expect(response.statusCode).to.equal(201);
+            done();
+        });
+    });
+    it('Admin can edit menu', function(done){
+        request.put({
+            url: baseURL+'/62',
+            headers: {'x-access-token': admin},
+            body: editItem,
+            json: true
+          },
+        function(error, response, body){
+            expect(response.statusCode).to.equal(200);
+            done();
+        });
+    });
+    it('Deleting missing menu returns 404', function(done){
+        request.delete({
+            url: baseURL+'/63',
+            headers: {'x-access-token': admin}
+          },
+        function(error, response, body){
+            expect(response.statusCode).to.equal(404);
             done();
         });
     });
