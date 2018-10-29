@@ -1,4 +1,3 @@
-let should = require('should');
 let request = require('request');
 let expect = require('chai').expect;
 let assert = require('chai').assert
