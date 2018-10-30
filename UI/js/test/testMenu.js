@@ -51,7 +51,7 @@ describe('Menu Management', function(){
             "image": "testimage.jpg"
         }
         //login before posting menu
-        env(__dirname + '/.env');
+        // env(__dirname + '/.env');
         request.post({
             url: 'https://fastfoodfast-api.herokuapp.com/api/v2/auth/login',
             body: {"username": process.env.ADMIN_USER, "password": process.env.ADMIN_PASS},

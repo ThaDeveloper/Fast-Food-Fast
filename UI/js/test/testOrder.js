@@ -14,7 +14,7 @@ describe('Orders - User', function(){
             'coffee': 1
         }}
         //login before posting order
-        env(__dirname + '/.env');
+        // env(__dirname + '/.env');
         request.post({
             url: 'https://fastfoodfast-api.herokuapp.com/api/v2/auth/login',
             body: {"username": process.env.TEST_USER, "password": process.env.TEST_PASS},
@@ -52,7 +52,7 @@ describe('Orders - Admin', function(){
     let admin;
     beforeEach(function(done){
         //login before accessing orders
-        env(__dirname + '/.env');
+        // env(__dirname + '/.env');
         request.post({
             url: 'https://fastfoodfast-api.herokuapp.com/api/v2/auth/login',
             body: {"username": process.env.ADMIN_USER, "password": process.env.ADMIN_PASS},
