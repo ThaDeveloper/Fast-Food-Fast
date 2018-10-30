@@ -39,7 +39,7 @@ describe('Menu Management', function(){
     let newItem, editItem, admin;
     beforeEach(function(done){
         newItem = {
-            "name": "newmenu",
+            "name": "newmenutest",
             "price": "100.00",
             "category": "main",
             "image": "testimage.jpg"

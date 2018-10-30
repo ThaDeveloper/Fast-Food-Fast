@@ -4,7 +4,9 @@
   "description": "Fast-Food-Fast app",
   "main": "index.html",
   "scripts": {
-    "test": "nyc mocha --timeout 50000 -- 'UI/js/test/*.js' || true"
+    "test": "mocha --timeout 50000 -- 'UI/js/test/*.js' || true",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "http://fastfoodfast-ui.herokuapp.com/UI",
   "dependencies": {
+    "coveralls": "^3.0.2",
     "eslint": "^5.7.0",
     "npm": "^6.4.1"
   },
@@ -28,6 +31,7 @@
     "mocha": "^5.2.0",
     "node-env-file": "^0.1.8",
     "nyc": "^13.1.0",
+    "puppeteer": "^1.9.0",
     "request": "^2.88.0",
     "should": "^13.2.3"
   }
