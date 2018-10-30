@@ -2,9 +2,18 @@ language: node_js
 sudo: false
 node_js:
   - "node"
+addons:
+  chrome: stable
+before_install:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+cache:
+  npm: true
+  directories:
+    - node_modules
 install:
   - npm install
 script:
   - npm test -- --coverage
 after_success:
   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
+  
