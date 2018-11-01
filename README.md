@@ -7,7 +7,7 @@ A fast food ordering app.
 
 ## Prerequisites
 
-Make sure you have the followings installed.
+Make sure you have the following installed.
 
 * Nodejs
 * Latest chrome, firefox or safari browser
