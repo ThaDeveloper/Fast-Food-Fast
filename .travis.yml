@@ -8,6 +8,7 @@ cache:
     - node_modules
 install:
   - npm install
+  - npm install https://github.com/GoogleChrome/puppeteer
 script:
   - npm test -- --coverage
 after_success:
