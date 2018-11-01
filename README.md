@@ -19,9 +19,15 @@ Make sure you have the followings installed.
 - [REST API](https://restfulapi.net/)
 
 
-## Run the application
- - `$ git clone https://github.com/ThaDeveloper/Fast-Food-Fast`
+## Run & Test the application
+### Get the source code
+ - `$ git clone -b ch-unit-testing-161431243 https://github.com/ThaDeveloper/Fast-Food-Fast`
  - `$ cd Fast-Food-Fast`
+### Install dependencies and start app
+ - `$ npm install`
+ - copy all from .env_sample and create a .env file under `test` directory and paste
+ - Uncomment all occurences of the line `// env(__dirname + '/.env');` in `testMenu.js` and `testOrder.js`
+ - `$ npm start &`
  - Under /UI directory open index.html' in your favorite browser.
 
 * To Note: *
@@ -34,6 +40,12 @@ Only admin can add, edit or delete menu. Only admin can manage orders.
 To test for admin routes, use `justin.ndwiga` as username and `@Password1` as password.
 
 Alternatively you can test the hosted version - [Fast-Food-Fast live](http://fastfoodfast-ui.herokuapp.com/UI). Use same login credentials for admin as above.
+
+### Run tests
+ - `$ npm test`
+
+ * To Note: *
+Should always run `$ npm start &` before running tests to ensure the http-server is live.
 
 ## Author
 
