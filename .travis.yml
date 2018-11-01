@@ -8,8 +8,8 @@ cache:
     - node_modules
 install:
   - npm install
-  - npm install https://github.com/GoogleChrome/puppeteer
 script:
+  - npm start &
   - npm test -- --coverage
 after_success:
   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
