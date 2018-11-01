@@ -48,7 +48,7 @@ describe('Render registration page', () => {
       //username and email to be changed for a new test
       await page.type('#full_name', 'mocha puppeteer')
       await page.type('#username', 'puppet')
-      await page.type('#email', 'puppet@domtest.com')
+      await page.type('#email', 'pupp@domtest.com')
       await page.type('#password', '@Password1')
       await page.type('#pass_confirm', '@Password1')
       await page.click('#signButton')

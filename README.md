@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ThaDeveloper/Fast-Food-Fast.svg?branch=ch-unit-testing-161431243)](https://travis-ci.org/ThaDeveloper/Fast-Food-Fast)
 [![Coverage Status](https://coveralls.io/repos/github/ThaDeveloper/Fast-Food-Fast/badge.svg?branch=ch-unit-testing-161431243)](https://coveralls.io/github/ThaDeveloper/Fast-Food-Fast?branch=ch-unit-testing-161431243)
+
 A fast food ordering app.
 
 ## Prerequisites
