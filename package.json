@@ -4,7 +4,7 @@
   "description": "Fast-Food-Fast app",
   "main": "index.html",
   "scripts": {
-    "start":"./node_modules/.bin/http-server -a localhost -p 5500 -c-1",
+    "start": "./node_modules/.bin/http-server -a localhost -p 5500 -c-1",
     "test": "mocha --timeout 50000 -- 'UI/js/test/*.js' || true",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "coveralls": "cat ./coverage/lcov.info | coveralls"

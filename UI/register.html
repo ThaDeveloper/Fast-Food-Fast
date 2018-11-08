@@ -21,12 +21,12 @@
                 <input type="text" placeholder="Enter Full Name"  id="full_name" required>
 
                 <input type="text" placeholder="Enter Username" id="username" required>
-
-                <input type="text" placeholder="Enter Email" id="email" required>
-            
+                <span id="email_error"></span>
+                <input type="text" placeholder="Enter Email" id="email" onfocusout="validateEmail(this.value)" required>
+                
                 <input type="password" placeholder="Enter Password" id="password" required>
-            
-                <input type="password" placeholder="Repeat Password" id="pass_confirm" required>
+                <span id="pass_error"></span>
+                <input type="password" placeholder="Repeat Password" id="pass_confirm" onfocusout="validatePass(this.value)" required>
                     
                 <div class="clearfix">
                     <button type="button" class="cancelbtn"  onclick="location.href='index.html';">Home</button>

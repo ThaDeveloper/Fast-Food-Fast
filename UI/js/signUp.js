@@ -1,6 +1,27 @@
 const baseURL = 'https://fastfoodfast-api.herokuapp.com/api/v2/auth/register'
 document.getElementById('signUp').addEventListener('submit', signUp)
 
+let validateEmail = email => {
+    let output = document.getElementById('email_error')
+    let regex = /^[\w.-]+@([\w-]+)\.+\w{2,4}$/;
+    //js test method returns true if there's match else false
+    if (!regex.test(email)) {
+        output.innerHTML = "Invalid email"
+    }else{
+        output.innerHTML = ""
+    }
+}
+let validatePass = confirm =>{
+    let pass = document.getElementById('password')
+    let output = document.getElementById('pass_error')
+    if(pass != confirm){
+        output.innerHTML = "Passwords don't match"
+    }
+    else{
+        output.innerHTML = ""        
+    }
+}
+
 function signUp(e){
     e.preventDefault();
     let first_name = document.getElementById('full_name').value.split(" ")[0];

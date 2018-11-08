@@ -112,3 +112,10 @@ hr {
       width: 80%;
     }
 }
+
+#email_error, #pass_error {
+    color: #CC0000;
+}
+.inputerrors{
+    background-color: #4CAF50;
+}
