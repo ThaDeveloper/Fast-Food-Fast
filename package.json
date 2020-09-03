@@ -33,7 +33,7 @@
     "mocha": "^5.2.0",
     "node-env-file": "^0.1.8",
     "nyc": "^13.1.0",
-    "puppeteer": "^1.9.0",
+    "puppeteer": "^1.13.0",
     "request": "^2.88.0",
     "should": "^13.2.3"
   }
